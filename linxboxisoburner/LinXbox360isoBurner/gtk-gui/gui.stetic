@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stetic-interface>
+  <configuration>
+    <images-root-path>..</images-root-path>
+    <target-gtk-version>2.10</target-gtk-version>
+  </configuration>
+  <import>
+    <widget-library name="glade-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Release/LinXbox360isoBurner.exe" internal="true" />
+  </import>
+  <widget class="Gtk.Window" id="MainWindow" design-size="314 287">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">LinXbox360isoBurner</property>
+    <property name="Icon">resource:icon.png</property>
+    <property name="WindowPosition">Center</property>
+    <property name="Resizable">False</property>
+    <property name="AllowGrow">False</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <child>
+      <widget class="Gtk.Fixed" id="fixed">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Button" id="button_ok">
+            <property name="MemberName" />
+            <property name="Sensitive">False</property>
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label">Burn</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnButtonOkClicked" />
+          </widget>
+          <packing>
+            <property name="X">20</property>
+            <property name="Y">220</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label1">
+            <property name="MemberName" />
+            <property name="Xalign">0</property>
+            <property name="LabelProp" translatable="yes">.dvd file:</property>
+          </widget>
+          <packing>
+            <property name="X">15</property>
+            <property name="Y">13</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+            <signal name="Changed" handler="OnEntryChanged" />
+          </widget>
+          <packing>
+            <property name="X">15</property>
+            <property name="Y">40</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.FileChooserButton" id="filechooserbutton">
+            <property name="MemberName" />
+            <property name="Title" translatable="yes" />
+            <property name="ShowHidden">True</property>
+            <signal name="SelectionChanged" handler="OnFilechooserbuttonSelectionChanged" />
+          </widget>
+          <packing>
+            <property name="X">213</property>
+            <property name="Y">40</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button_exit">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Exit </property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnButtonExitClicked" />
+          </widget>
+          <packing>
+            <property name="X">247</property>
+            <property name="Y">220</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HButtonBox" id="hbuttonbox5">
+            <property name="MemberName" />
+            <property name="Size">0</property>
+          </widget>
+          <packing>
+            <property name="X">76</property>
+            <property name="Y">82</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label2">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">DVD recorder:</property>
+          </widget>
+          <packing>
+            <property name="X">15</property>
+            <property name="Y">78</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Entry" id="entry_dvd">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Text" translatable="yes">/dev/</property>
+            <property name="IsEditable">True</property>
+            <property name="InvisibleChar">●</property>
+            <signal name="Changed" handler="OnEntryDvdChanged" />
+          </widget>
+          <packing>
+            <property name="X">15</property>
+            <property name="Y">105</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.FileChooserButton" id="filechooserbutton_dvd">
+            <property name="MemberName" />
+            <property name="Title" translatable="yes" />
+            <property name="ShowHidden">True</property>
+            <signal name="SelectionChanged" handler="OnFilechooserbuttonDvdSelectionChanged" />
+          </widget>
+          <packing>
+            <property name="X">213</property>
+            <property name="Y">105</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.CheckButton" id="checkbutton_dryrun">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Label" translatable="yes">dry-run</property>
+            <property name="DrawIndicator">True</property>
+            <property name="HasLabel">True</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Pressed" handler="OnCheckbuttonDryrunPressed" />
+          </widget>
+          <packing>
+            <property name="X">15</property>
+            <property name="Y">183</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label3">
+            <property name="MemberName" />
+            <property name="LabelProp" translatable="yes">Burning speed:</property>
+          </widget>
+          <packing>
+            <property name="X">20</property>
+            <property name="Y">149</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.ComboBox" id="combobox_speed">
+            <property name="MemberName" />
+            <property name="IsTextCombo">True</property>
+            <property name="Items" translatable="yes">2
+3
+4</property>
+            <property name="Active">0</property>
+          </widget>
+          <packing>
+            <property name="X">213</property>
+            <property name="Y">143</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="LinXbox360isoBurner.FileError" design-size="201 117">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">FileError</property>
+    <property name="Icon">resource:icon.png</property>
+    <property name="WindowPosition">CenterAlways</property>
+    <property name="Resizable">False</property>
+    <property name="AllowGrow">False</property>
+    <property name="Gravity">Static</property>
+    <property name="SkipPagerHint">True</property>
+    <property name="SkipTaskbarHint">True</property>
+    <child>
+      <widget class="Gtk.Fixed" id="fixed">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Button" id="button">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Close</property>
+            <property name="UseUnderline">True</property>
+            <signal name="Clicked" handler="OnButtonClicked" />
+          </widget>
+          <packing>
+            <property name="X">67</property>
+            <property name="Y">41</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Label" id="label_error">
+            <property name="MemberName" />
+            <property name="Xpad">22</property>
+            <property name="LabelProp" translatable="yes">.dvd file error</property>
+            <property name="Justify">Center</property>
+          </widget>
+          <packing>
+            <property name="X">28</property>
+            <property name="Y">15</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="LinXbox360isoBurner.BurningWindow" design-size="618 130">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">Burning... (Don't close this window)</property>
+    <property name="WindowPosition">Center</property>
+    <property name="Resizable">False</property>
+    <property name="AllowGrow">False</property>
+    <property name="DestroyWithParent">True</property>
+    <property name="Gravity">Center</property>
+    <property name="SkipPagerHint">True</property>
+    <signal name="DeleteEvent" handler="OnDeleteEvent" />
+    <signal name="SizeAllocated" handler="OnSizeAllocated" />
+    <child>
+      <widget class="Gtk.Fixed" id="fixed_burn">
+        <property name="MemberName" />
+        <property name="HasWindow">False</property>
+        <child>
+          <widget class="Gtk.Label" id="label_status">
+            <property name="MemberName" />
+            <property name="Xpad">300</property>
+            <property name="Ypad">5</property>
+            <property name="Xalign">1</property>
+            <property name="LabelProp" translatable="yes">...</property>
+            <property name="Justify">Center</property>
+            <property name="SingleLineMode">True</property>
+          </widget>
+          <packing>
+            <property name="Y">16</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Button" id="button_cancel">
+            <property name="MemberName" />
+            <property name="CanFocus">True</property>
+            <property name="Type">TextOnly</property>
+            <property name="Label" translatable="yes">Cancel</property>
+            <property name="UseUnderline">True</property>
+          </widget>
+          <packing>
+            <property name="X">280</property>
+            <property name="Y">54</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+</stetic-interface>
