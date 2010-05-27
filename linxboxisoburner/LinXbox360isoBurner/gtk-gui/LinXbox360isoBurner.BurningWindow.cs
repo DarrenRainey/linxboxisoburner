@@ -24,6 +24,7 @@ namespace LinXbox360isoBurner {
             // Widget LinXbox360isoBurner.BurningWindow
             this.Name = "LinXbox360isoBurner.BurningWindow";
             this.Title = "Burning... (Don't close this window)";
+            this.Icon = Gdk.Pixbuf.LoadFromResource("icon.png");
             this.WindowPosition = ((Gtk.WindowPosition)(1));
             this.Resizable = false;
             this.AllowGrow = false;

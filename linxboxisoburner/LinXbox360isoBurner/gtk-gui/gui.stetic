@@ -219,6 +219,7 @@
   <widget class="Gtk.Window" id="LinXbox360isoBurner.BurningWindow" design-size="618 130">
     <property name="MemberName" />
     <property name="Title" translatable="yes">Burning... (Don't close this window)</property>
+    <property name="Icon">resource:icon.png</property>
     <property name="WindowPosition">Center</property>
     <property name="Resizable">False</property>
     <property name="AllowGrow">False</property>
