@@ -3,18 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinXbox360isoBurner", "LinXbox360isoBurner\LinXbox360isoBurner.csproj", "{C9CCFDD6-ABB0-4E1E-B488-1F62C64A756D}"
 EndProject
-Project("{9344bdbb-3e7f-41fc-a0dd-8665d75ee146}") = "Исходники", "Исходники.mdproj", "{3BF9221E-83E9-413D-9D3D-380964626487}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3BF9221E-83E9-413D-9D3D-380964626487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3BF9221E-83E9-413D-9D3D-380964626487}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3BF9221E-83E9-413D-9D3D-380964626487}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3BF9221E-83E9-413D-9D3D-380964626487}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C9CCFDD6-ABB0-4E1E-B488-1F62C64A756D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C9CCFDD6-ABB0-4E1E-B488-1F62C64A756D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9CCFDD6-ABB0-4E1E-B488-1F62C64A756D}.Release|Any CPU.ActiveCfg = Release|Any CPU
