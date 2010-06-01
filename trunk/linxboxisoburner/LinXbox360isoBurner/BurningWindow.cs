@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using Gtk;
+using Gdk;
 
 namespace LinXbox360isoBurner
 {	
@@ -9,7 +10,7 @@ namespace LinXbox360isoBurner
 	{
 		private Process burnproc;
 		private bool buttonend;
-		StatusIcon trayicon;
+		public StatusIcon trayicon;
 			
 			
 		public BurningWindow(ref Process proc) : 
@@ -24,6 +25,15 @@ namespace LinXbox360isoBurner
 			buttonend = false;
 			
 			trayicon = new StatusIcon("./icon.png");
+			trayicon.Visible = false;
+			trayicon.Activate += HandleActivate;
+		}
+
+		void HandleActivate(object sender, EventArgs e)
+		{
+			this.Maximize();
+			this.Visible = true;
+			trayicon.Visible = false;
 		}
 
 		void HandleCancel(object sender, EventArgs e)
@@ -74,6 +84,15 @@ namespace LinXbox360isoBurner
 			int x = width/2 - butwidth/2;
 			Gdk.Rectangle retangle = new Gdk.Rectangle(x, 54, butwidth, button_cancel.Allocation.Height);
 			button_cancel.Allocation = retangle;
-		}		
-	}
+		}
+
+		protected virtual void OnWindowStateEvent (object o, Gtk.WindowStateEventArgs args)
+		{
+			if (args.Event.Window.State == WindowState.Iconified)
+			{
+				trayicon.Visible = true;
+				this.Visible = false;
+			}
+		}
+	}		
 }

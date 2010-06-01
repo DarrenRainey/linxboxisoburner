@@ -129,6 +129,7 @@ public partial class MainWindow: Gtk.Window
 		}
 
 		burning.Button_text = "Close";
+		burning.trayicon.Blinking = true;
 		
 //		this.Title = "LinXbox360isoBurner";
 	}
