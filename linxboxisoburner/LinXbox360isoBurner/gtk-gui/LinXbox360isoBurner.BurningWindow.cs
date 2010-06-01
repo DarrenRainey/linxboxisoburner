@@ -66,6 +66,7 @@ namespace LinXbox360isoBurner {
             this.Show();
             this.DeleteEvent += new Gtk.DeleteEventHandler(this.OnDeleteEvent);
             this.SizeAllocated += new Gtk.SizeAllocatedHandler(this.OnSizeAllocated);
+            this.WindowStateEvent += new Gtk.WindowStateEventHandler(this.OnWindowStateEvent);
         }
     }
 }
