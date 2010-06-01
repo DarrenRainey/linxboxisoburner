@@ -94,11 +94,18 @@ public partial class MainWindow: Gtk.Window
 		process.BeginOutputReadLine();
 		process.BeginErrorReadLine();
 		
-		this.Title = "Burning...";
+//		this.Title = "Burning...";
 		
 		burning = new BurningWindow(ref process);
+		burning.Destroyed += HandleDestroyed;
 		burning.ShowAll();
-		this.Hide();
+		
+		this.Visible = false;
+	}
+
+	void HandleDestroyed(object sender, EventArgs e)
+	{
+		this.Visible = true;
 	}
 
 	protected	void HandleErrorDataReceived(object sender, DataReceivedEventArgs e)
@@ -123,8 +130,7 @@ public partial class MainWindow: Gtk.Window
 
 		burning.Button_text = "Close";
 		
-		this.Title = "LinXbox360isoBurner";
-		this.Show();
+//		this.Title = "LinXbox360isoBurner";
 	}
 
 	

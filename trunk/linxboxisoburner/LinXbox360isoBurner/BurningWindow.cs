@@ -1,6 +1,7 @@
 
 using System;
 using System.Diagnostics;
+using Gtk;
 
 namespace LinXbox360isoBurner
 {	
@@ -8,15 +9,21 @@ namespace LinXbox360isoBurner
 	{
 		private Process burnproc;
 		private bool buttonend;
+		StatusIcon trayicon;
+			
 			
 		public BurningWindow(ref Process proc) : 
 				base(Gtk.WindowType.Toplevel)
 		{
 			this.Build();
+			
 			burnproc = proc;
+			
 			this.button_cancel.Clicked += HandleCancel;
 			this.Deletable = false;
 			buttonend = false;
+			
+			trayicon = new StatusIcon("./icon.png");
 		}
 
 		void HandleCancel(object sender, EventArgs e)
@@ -29,7 +36,11 @@ namespace LinXbox360isoBurner
 		public string Label_burn
 		{
 			get { return label_status.Text;}
-			set {label_status.Text = value;}
+			set 
+			{
+				label_status.Text = value;
+				trayicon.Tooltip = value;
+			}
 		}
 			
 		public string Button_text
@@ -42,11 +53,11 @@ namespace LinXbox360isoBurner
 		{
 			this.button_cancel.Clicked -= HandleCancel;
 			this.button_cancel.Clicked += HandleClosing;
+			buttonend = true;
 		}
 		
 		void HandleClosing(object sender, EventArgs e)
 		{
-			buttonend = true;
 			this.Destroy();	
 		}
 
@@ -63,6 +74,6 @@ namespace LinXbox360isoBurner
 			int x = width/2 - butwidth/2;
 			Gdk.Rectangle retangle = new Gdk.Rectangle(x, 54, butwidth, button_cancel.Allocation.Height);
 			button_cancel.Allocation = retangle;
-		}
+		}		
 	}
 }
