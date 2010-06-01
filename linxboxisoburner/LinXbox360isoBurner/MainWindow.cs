@@ -98,6 +98,7 @@ public partial class MainWindow: Gtk.Window
 		
 		burning = new BurningWindow(ref process);
 		burning.ShowAll();
+		this.Hide();
 	}
 
 	protected	void HandleErrorDataReceived(object sender, DataReceivedEventArgs e)
@@ -123,6 +124,7 @@ public partial class MainWindow: Gtk.Window
 		burning.Button_text = "Close";
 		
 		this.Title = "LinXbox360isoBurner";
+		this.Show();
 	}
 
 	
