@@ -139,12 +139,6 @@ public partial class MainWindow: Gtk.Window
 	{ 
 		burning.Label_burn = e.Data.ToString();
 	}
-	
-	protected virtual void OnFilechooserbuttonDvdSelectionChanged (object sender, System.EventArgs e)
-	{
-		entry_dvd.Text = filechooserbutton_dvd.Filename;
-		if (!(entry.Text =="") && !(entry_dvd.Text == "")) button_ok.Sensitive = true;
-	}
 
 	protected virtual void OnCheckbuttonDryrunPressed (object sender, System.EventArgs e)
 	{
@@ -161,5 +155,23 @@ public partial class MainWindow: Gtk.Window
 	{
 		if (!(entry.Text =="") && !(entry_dvd.Text == "")) button_ok.Sensitive = true;
 			else button_ok.Sensitive = false;
+	}
+
+	protected virtual void OnButtonAutodvdrwClicked (object sender, System.EventArgs e)
+	{
+		string [] dev = Directory.GetFiles("/dev");
+		System.Collections.ArrayList dvdrwlist = new System.Collections.ArrayList();
+		
+		foreach (string d in dev)
+		{
+			if (d.Contains("dvdrw")) dvdrwlist.Add(d);
+		}
+		
+		Dvdrwchoose dialog = new Dvdrwchoose(dvdrwlist);
+
+		dialog.Destroyed += delegate {if (dialog.dvdrw != null) entry_dvd.Text = dialog.dvdrw;
+										else entry_dvd.Text = "/dev/";};
+		
+		dialog.Visible = true;
 	}
 }
