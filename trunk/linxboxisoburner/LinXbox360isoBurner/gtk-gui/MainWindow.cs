@@ -30,13 +30,13 @@ public partial class MainWindow {
     
     private Gtk.Entry entry_dvd;
     
-    private Gtk.FileChooserButton filechooserbutton_dvd;
-    
     private Gtk.CheckButton checkbutton_dryrun;
     
     private Gtk.Label label3;
     
     private Gtk.ComboBox combobox_speed;
+    
+    private Gtk.Button button_autodvdrw;
     
     protected virtual void Build() {
         Stetic.Gui.Initialize(this);
@@ -126,14 +126,6 @@ public partial class MainWindow {
         w8.X = 15;
         w8.Y = 105;
         // Container child fixed.Gtk.Fixed+FixedChild
-        this.filechooserbutton_dvd = new Gtk.FileChooserButton("", ((Gtk.FileChooserAction)(0)));
-        this.filechooserbutton_dvd.Name = "filechooserbutton_dvd";
-        this.filechooserbutton_dvd.ShowHidden = true;
-        this.@fixed.Add(this.filechooserbutton_dvd);
-        Gtk.Fixed.FixedChild w9 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.filechooserbutton_dvd]));
-        w9.X = 213;
-        w9.Y = 105;
-        // Container child fixed.Gtk.Fixed+FixedChild
         this.checkbutton_dryrun = new Gtk.CheckButton();
         this.checkbutton_dryrun.CanFocus = true;
         this.checkbutton_dryrun.Name = "checkbutton_dryrun";
@@ -141,17 +133,17 @@ public partial class MainWindow {
         this.checkbutton_dryrun.DrawIndicator = true;
         this.checkbutton_dryrun.UseUnderline = true;
         this.@fixed.Add(this.checkbutton_dryrun);
-        Gtk.Fixed.FixedChild w10 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.checkbutton_dryrun]));
-        w10.X = 15;
-        w10.Y = 183;
+        Gtk.Fixed.FixedChild w9 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.checkbutton_dryrun]));
+        w9.X = 15;
+        w9.Y = 183;
         // Container child fixed.Gtk.Fixed+FixedChild
         this.label3 = new Gtk.Label();
         this.label3.Name = "label3";
         this.label3.LabelProp = "Burning speed:";
         this.@fixed.Add(this.label3);
-        Gtk.Fixed.FixedChild w11 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.label3]));
-        w11.X = 20;
-        w11.Y = 149;
+        Gtk.Fixed.FixedChild w10 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.label3]));
+        w10.X = 20;
+        w10.Y = 149;
         // Container child fixed.Gtk.Fixed+FixedChild
         this.combobox_speed = Gtk.ComboBox.NewText();
         this.combobox_speed.AppendText("2");
@@ -160,9 +152,19 @@ public partial class MainWindow {
         this.combobox_speed.Name = "combobox_speed";
         this.combobox_speed.Active = 0;
         this.@fixed.Add(this.combobox_speed);
-        Gtk.Fixed.FixedChild w12 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.combobox_speed]));
+        Gtk.Fixed.FixedChild w11 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.combobox_speed]));
+        w11.X = 213;
+        w11.Y = 143;
+        // Container child fixed.Gtk.Fixed+FixedChild
+        this.button_autodvdrw = new Gtk.Button();
+        this.button_autodvdrw.CanFocus = true;
+        this.button_autodvdrw.Name = "button_autodvdrw";
+        this.button_autodvdrw.UseUnderline = true;
+        this.button_autodvdrw.Label = "auto detect";
+        this.@fixed.Add(this.button_autodvdrw);
+        Gtk.Fixed.FixedChild w12 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.button_autodvdrw]));
         w12.X = 213;
-        w12.Y = 143;
+        w12.Y = 106;
         this.Add(this.@fixed);
         if ((this.Child != null)) {
             this.Child.ShowAll();
@@ -176,7 +178,7 @@ public partial class MainWindow {
         this.filechooserbutton.SelectionChanged += new System.EventHandler(this.OnFilechooserbuttonSelectionChanged);
         this.button_exit.Clicked += new System.EventHandler(this.OnButtonExitClicked);
         this.entry_dvd.Changed += new System.EventHandler(this.OnEntryDvdChanged);
-        this.filechooserbutton_dvd.SelectionChanged += new System.EventHandler(this.OnFilechooserbuttonDvdSelectionChanged);
         this.checkbutton_dryrun.Pressed += new System.EventHandler(this.OnCheckbuttonDryrunPressed);
+        this.button_autodvdrw.Clicked += new System.EventHandler(this.OnButtonAutodvdrwClicked);
     }
 }
