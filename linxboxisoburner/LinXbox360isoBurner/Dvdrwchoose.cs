@@ -14,7 +14,8 @@ namespace LinXbox360isoBurner
 			foreach (string dev in devlist)
 			{
 				combobox.AppendText(dev);
-			}	
+			} 
+			combobox.Active = 0;
 		}
 		
 		protected virtual void OnButtonOkClicked (object sender, System.EventArgs e)
