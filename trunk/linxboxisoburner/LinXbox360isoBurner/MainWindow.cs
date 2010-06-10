@@ -151,12 +151,6 @@ public partial class MainWindow: Gtk.Window
 			else button_ok.Sensitive = false;
 	}
 
-	protected virtual void OnEntryDvdChanged (object sender, System.EventArgs e)
-	{
-		if (!(entry.Text =="") && !(entry_dvd.Text == "")) button_ok.Sensitive = true;
-			else button_ok.Sensitive = false;
-	}
-
 	protected virtual void OnButtonAutodvdrwClicked (object sender, System.EventArgs e)
 	{
 		string [] dev = Directory.GetFiles("/dev");
