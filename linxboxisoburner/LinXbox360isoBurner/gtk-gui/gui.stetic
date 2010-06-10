@@ -5,8 +5,8 @@
     <target-gtk-version>2.12</target-gtk-version>
   </configuration>
   <import>
-    <widget-library name="../bin/Debug/LinXbox360isoBurner.exe" internal="true" />
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <widget-library name="../bin/Release/LinXbox360isoBurner.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="396 312">
     <action-group name="Default">
@@ -19,6 +19,30 @@
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">Help</property>
         <property name="ShortLabel" translatable="yes">Help</property>
+      </action>
+      <action id="BurnAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Burn...</property>
+        <property name="ShortLabel" translatable="yes">Burn...</property>
+      </action>
+      <action id="ExitAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Exit</property>
+        <property name="ShortLabel" translatable="yes">Exit</property>
+        <signal name="Activated" handler="OnButtonExitClicked" />
+      </action>
+      <action id="AboutAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">About...</property>
+        <property name="ShortLabel" translatable="yes">About...</property>
+        <signal name="Activated" handler="OnAboutActionActivated" />
+      </action>
+      <action id="BurnAction1">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Burn...</property>
+        <property name="Sensitive">False</property>
+        <property name="ShortLabel" translatable="yes">Burn...</property>
+        <signal name="Activated" handler="OnButtonOkClicked" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -33,11 +57,16 @@
         <property name="MemberName" />
         <property name="Spacing">6</property>
         <child>
-          <widget class="Gtk.MenuBar" id="menubar1">
+          <widget class="Gtk.MenuBar" id="menubar">
             <property name="MemberName" />
-            <node name="menubar1" type="Menubar">
-              <node type="Menu" action="FileAction" />
-              <node type="Menu" action="HelpAction" />
+            <node name="menubar" type="Menubar">
+              <node type="Menu" action="FileAction">
+                <node type="Menuitem" action="BurnAction1" />
+                <node type="Menuitem" action="ExitAction" />
+              </node>
+              <node type="Menu" action="HelpAction">
+                <node type="Menuitem" action="AboutAction" />
+              </node>
             </node>
           </widget>
           <packing>
@@ -532,6 +561,118 @@
           <packing>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
+          </packing>
+        </child>
+      </widget>
+    </child>
+  </widget>
+  <widget class="Gtk.Window" id="LinXbox360isoBurner.About" design-size="613 194">
+    <property name="MemberName" />
+    <property name="Title" translatable="yes">About</property>
+    <property name="Icon">resource:icon.png</property>
+    <property name="WindowPosition">CenterOnParent</property>
+    <property name="Resizable">False</property>
+    <property name="AllowGrow">False</property>
+    <property name="Gravity">Center</property>
+    <child>
+      <widget class="Gtk.VBox" id="vbox4">
+        <property name="MemberName" />
+        <property name="Spacing">6</property>
+        <child>
+          <widget class="Gtk.HBox" id="hbox2">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Image" id="image">
+                <property name="MemberName" />
+                <property name="Pixbuf">resource:icon.png</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.VBox" id="vbox6">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.Label" id="label2">
+                    <property name="MemberName" />
+                    <property name="LabelProp">LinXbox360isoBurner ver. 0.2.0</property>
+                    <property name="Justify">Center</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="label3">
+                    <property name="MemberName" />
+                    <property name="LabelProp" translatable="yes">Author: Andrey Sizov &lt;AndrSizov@gmail.com&gt;</property>
+                    <property name="Justify">Center</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Label" id="label4">
+                    <property name="MemberName" />
+                    <property name="LabelProp">This programm is distriuted under GNU GPL v.3
+You can get sourse code via svn repository
+http://linxboxisoburner.googlecode.com/svn/trunk/linxboxisoburner</property>
+                    <property name="Justify">Center</property>
+                  </widget>
+                  <packing>
+                    <property name="Position">2</property>
+                    <property name="AutoSize">True</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="PackType">End</property>
+                <property name="Position">1</property>
+                <property name="AutoSize">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.HButtonBox" id="hbuttonbox3">
+            <property name="MemberName" />
+            <property name="Size">1</property>
+            <child>
+              <widget class="Gtk.Button" id="button">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Close</property>
+                <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="OnButtonClicked" />
+              </widget>
+              <packing>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">False</property>
           </packing>
         </child>
       </widget>
