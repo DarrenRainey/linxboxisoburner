@@ -31,7 +31,7 @@ public partial class MainWindow: Gtk.Window
 	protected virtual void OnFilechooserbuttonSelectionChanged (object sender, System.EventArgs e)
 	{
 		entry.Text = filechooserbutton.Filename;
-		if (!(entry.Text =="") && !(entry_dvd.Text == "")) button_ok.Sensitive = true;
+		if (!(entry.Text =="") && !(entry_dvd.Text == "")) BurnSensetive = true;
 	}
 
 	protected virtual void OnButtonOkClicked (object sender, System.EventArgs e)
@@ -147,8 +147,8 @@ public partial class MainWindow: Gtk.Window
 
 	protected virtual void OnEntryChanged (object sender, System.EventArgs e)
 	{
-		if (!(entry.Text =="") && !(entry_dvd.Text == "")) button_ok.Sensitive = true;
-			else button_ok.Sensitive = false;
+		if (!(entry.Text =="") && !(entry_dvd.Text == "")) BurnSensetive = true;
+			else BurnSensetive = false;
 	}
 
 	protected virtual void OnButtonAutodvdrwClicked (object sender, System.EventArgs e)
@@ -167,5 +167,20 @@ public partial class MainWindow: Gtk.Window
 										else entry_dvd.Text = "/dev/";};
 		
 		dialog.Visible = true;
+	}
+
+	protected virtual void OnAboutActionActivated (object sender, System.EventArgs e)
+	{
+		About ab = new About();
+		ab.Visible = true;
+	}
+	
+	bool BurnSensetive 
+	{
+		set 
+		{
+			button_ok.Sensitive = value;
+			BurnAction1.Sensitive = value;
+		}
 	}
 }

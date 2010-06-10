@@ -18,9 +18,17 @@ public partial class MainWindow {
     
     private Gtk.Action HelpAction;
     
+    private Gtk.Action BurnAction;
+    
+    private Gtk.Action ExitAction;
+    
+    private Gtk.Action AboutAction;
+    
+    private Gtk.Action BurnAction1;
+    
     private Gtk.VBox vbox;
     
-    private Gtk.MenuBar menubar1;
+    private Gtk.MenuBar menubar;
     
     private Gtk.HBox hbox1;
     
@@ -77,6 +85,19 @@ public partial class MainWindow {
         this.HelpAction = new Gtk.Action("HelpAction", "Help", null, null);
         this.HelpAction.ShortLabel = "Help";
         w1.Add(this.HelpAction, null);
+        this.BurnAction = new Gtk.Action("BurnAction", "Burn...", null, null);
+        this.BurnAction.ShortLabel = "Burn...";
+        w1.Add(this.BurnAction, null);
+        this.ExitAction = new Gtk.Action("ExitAction", "Exit", null, null);
+        this.ExitAction.ShortLabel = "Exit";
+        w1.Add(this.ExitAction, null);
+        this.AboutAction = new Gtk.Action("AboutAction", "About...", null, null);
+        this.AboutAction.ShortLabel = "About...";
+        w1.Add(this.AboutAction, null);
+        this.BurnAction1 = new Gtk.Action("BurnAction1", "Burn...", null, null);
+        this.BurnAction1.Sensitive = false;
+        this.BurnAction1.ShortLabel = "Burn...";
+        w1.Add(this.BurnAction1, null);
         this.UIManager.InsertActionGroup(w1, 0);
         this.AddAccelGroup(this.UIManager.AccelGroup);
         this.Name = "MainWindow";
@@ -90,11 +111,11 @@ public partial class MainWindow {
         this.vbox.Name = "vbox";
         this.vbox.Spacing = 6;
         // Container child vbox.Gtk.Box+BoxChild
-        this.UIManager.AddUiFromString("<ui><menubar name='menubar1'><menu name='FileAction' action='FileAction'/><menu name='HelpAction' action='HelpAction'/></menubar></ui>");
-        this.menubar1 = ((Gtk.MenuBar)(this.UIManager.GetWidget("/menubar1")));
-        this.menubar1.Name = "menubar1";
-        this.vbox.Add(this.menubar1);
-        Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox[this.menubar1]));
+        this.UIManager.AddUiFromString("<ui><menubar name='menubar'><menu name='FileAction' action='FileAction'><menuitem name='BurnAction1' action='BurnAction1'/><menuitem name='ExitAction' action='ExitAction'/></menu><menu name='HelpAction' action='HelpAction'><menuitem name='AboutAction' action='AboutAction'/></menu></menubar></ui>");
+        this.menubar = ((Gtk.MenuBar)(this.UIManager.GetWidget("/menubar")));
+        this.menubar.Name = "menubar";
+        this.vbox.Add(this.menubar);
+        Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox[this.menubar]));
         w2.Position = 0;
         w2.Expand = false;
         w2.Fill = false;
@@ -313,6 +334,9 @@ public partial class MainWindow {
         this.DefaultHeight = 312;
         this.Show();
         this.DeleteEvent += new Gtk.DeleteEventHandler(this.OnDeleteEvent);
+        this.ExitAction.Activated += new System.EventHandler(this.OnButtonExitClicked);
+        this.AboutAction.Activated += new System.EventHandler(this.OnAboutActionActivated);
+        this.BurnAction1.Activated += new System.EventHandler(this.OnButtonOkClicked);
         this.entry.Changed += new System.EventHandler(this.OnEntryChanged);
         this.filechooserbutton.SelectionChanged += new System.EventHandler(this.OnFilechooserbuttonSelectionChanged);
         this.entry_dvd.Changed += new System.EventHandler(this.OnEntryChanged);
