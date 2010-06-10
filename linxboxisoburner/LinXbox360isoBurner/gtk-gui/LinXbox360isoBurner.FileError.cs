@@ -13,11 +13,15 @@ namespace LinXbox360isoBurner {
     
     public partial class FileError {
         
-        private Gtk.Fixed @fixed;
+        private Gtk.VBox vbox3;
+        
+        private Gtk.Label label1;
+        
+        private Gtk.HButtonBox hbuttonbox2;
         
         private Gtk.Button button;
         
-        private Gtk.Label label_error;
+        private Gtk.Fixed fixed2;
         
         protected virtual void Build() {
             Stetic.Gui.Initialize(this);
@@ -32,30 +36,43 @@ namespace LinXbox360isoBurner {
             this.SkipPagerHint = true;
             this.SkipTaskbarHint = true;
             // Container child LinXbox360isoBurner.FileError.Gtk.Container+ContainerChild
-            this.@fixed = new Gtk.Fixed();
-            this.@fixed.Name = "fixed";
-            this.@fixed.HasWindow = false;
-            // Container child fixed.Gtk.Fixed+FixedChild
+            this.vbox3 = new Gtk.VBox();
+            this.vbox3.Name = "vbox3";
+            this.vbox3.Spacing = 6;
+            // Container child vbox3.Gtk.Box+BoxChild
+            this.label1 = new Gtk.Label();
+            this.label1.Name = "label1";
+            this.label1.LabelProp = ".dvd file error";
+            this.vbox3.Add(this.label1);
+            Gtk.Box.BoxChild w1 = ((Gtk.Box.BoxChild)(this.vbox3[this.label1]));
+            w1.Position = 0;
+            // Container child vbox3.Gtk.Box+BoxChild
+            this.hbuttonbox2 = new Gtk.HButtonBox();
+            this.hbuttonbox2.Name = "hbuttonbox2";
+            // Container child hbuttonbox2.Gtk.ButtonBox+ButtonBoxChild
             this.button = new Gtk.Button();
             this.button.CanFocus = true;
             this.button.Name = "button";
             this.button.UseUnderline = true;
             this.button.Label = "Close";
-            this.@fixed.Add(this.button);
-            Gtk.Fixed.FixedChild w1 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.button]));
-            w1.X = 67;
-            w1.Y = 41;
-            // Container child fixed.Gtk.Fixed+FixedChild
-            this.label_error = new Gtk.Label();
-            this.label_error.Name = "label_error";
-            this.label_error.Xpad = 22;
-            this.label_error.LabelProp = ".dvd file error";
-            this.label_error.Justify = ((Gtk.Justification)(2));
-            this.@fixed.Add(this.label_error);
-            Gtk.Fixed.FixedChild w2 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.label_error]));
-            w2.X = 28;
-            w2.Y = 15;
-            this.Add(this.@fixed);
+            this.hbuttonbox2.Add(this.button);
+            Gtk.ButtonBox.ButtonBoxChild w2 = ((Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2[this.button]));
+            w2.Expand = false;
+            w2.Fill = false;
+            this.vbox3.Add(this.hbuttonbox2);
+            Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.vbox3[this.hbuttonbox2]));
+            w3.Position = 1;
+            w3.Expand = false;
+            w3.Fill = false;
+            // Container child vbox3.Gtk.Box+BoxChild
+            this.fixed2 = new Gtk.Fixed();
+            this.fixed2.Name = "fixed2";
+            this.fixed2.HasWindow = false;
+            this.vbox3.Add(this.fixed2);
+            Gtk.Box.BoxChild w4 = ((Gtk.Box.BoxChild)(this.vbox3[this.fixed2]));
+            w4.Position = 2;
+            w4.Fill = false;
+            this.Add(this.vbox3);
             if ((this.Child != null)) {
                 this.Child.ShowAll();
             }

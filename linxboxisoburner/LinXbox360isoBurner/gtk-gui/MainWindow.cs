@@ -12,35 +12,73 @@
 
 public partial class MainWindow {
     
-    private Gtk.Fixed @fixed;
+    private Gtk.UIManager UIManager;
     
-    private Gtk.Button button_ok;
+    private Gtk.Action FileAction;
     
-    private Gtk.Label label1;
+    private Gtk.Action HelpAction;
+    
+    private Gtk.VBox vbox;
+    
+    private Gtk.MenuBar menubar1;
+    
+    private Gtk.HBox hbox1;
+    
+    private Gtk.HBox hbox6;
+    
+    private Gtk.Label label4;
+    
+    private Gtk.HBox hbox2;
     
     private Gtk.Entry entry;
     
+    private Gtk.Fixed fixed2;
+    
     private Gtk.FileChooserButton filechooserbutton;
     
-    private Gtk.Button button_exit;
+    private Gtk.HBox hbox7;
     
-    private Gtk.HButtonBox hbuttonbox5;
+    private Gtk.Label label5;
     
-    private Gtk.Label label2;
+    private Gtk.HBox hbox3;
     
     private Gtk.Entry entry_dvd;
     
+    private Gtk.Fixed fixed3;
+    
+    private Gtk.HButtonBox hbuttonbox3;
+    
+    private Gtk.Button button9;
+    
+    private Gtk.Fixed fixed4;
+    
     private Gtk.CheckButton checkbutton_dryrun;
+    
+    private Gtk.HBox hbox5;
     
     private Gtk.Label label3;
     
     private Gtk.ComboBox combobox_speed;
     
-    private Gtk.Button button_autodvdrw;
+    private Gtk.HButtonBox hbuttonbox;
+    
+    private Gtk.Button button_ok;
+    
+    private Gtk.Button button_exit;
     
     protected virtual void Build() {
         Stetic.Gui.Initialize(this);
         // Widget MainWindow
+        this.UIManager = new Gtk.UIManager();
+        Gtk.ActionGroup w1 = new Gtk.ActionGroup("Default");
+        this.FileAction = new Gtk.Action("FileAction", "File", null, null);
+        this.FileAction.ShortLabel = "File";
+        w1.Add(this.FileAction, null);
+        this.HelpAction = new Gtk.Action("HelpAction", "Help", null, null);
+        this.HelpAction.ShortLabel = "Help";
+        w1.Add(this.HelpAction, null);
+        this.UIManager.InsertActionGroup(w1, 0);
+        this.AddAccelGroup(this.UIManager.AccelGroup);
         this.Name = "MainWindow";
         this.Title = "LinXbox360isoBurner";
         this.Icon = Gdk.Pixbuf.LoadFromResource("icon.png");
@@ -48,137 +86,239 @@ public partial class MainWindow {
         this.Resizable = false;
         this.AllowGrow = false;
         // Container child MainWindow.Gtk.Container+ContainerChild
-        this.@fixed = new Gtk.Fixed();
-        this.@fixed.Name = "fixed";
-        this.@fixed.HasWindow = false;
-        // Container child fixed.Gtk.Fixed+FixedChild
-        this.button_ok = new Gtk.Button();
-        this.button_ok.Sensitive = false;
-        this.button_ok.CanFocus = true;
-        this.button_ok.Name = "button_ok";
-        this.button_ok.UseUnderline = true;
-        this.button_ok.Label = "Burn";
-        this.@fixed.Add(this.button_ok);
-        Gtk.Fixed.FixedChild w1 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.button_ok]));
-        w1.X = 20;
-        w1.Y = 220;
-        // Container child fixed.Gtk.Fixed+FixedChild
-        this.label1 = new Gtk.Label();
-        this.label1.Name = "label1";
-        this.label1.Xalign = 0F;
-        this.label1.LabelProp = ".dvd file:";
-        this.@fixed.Add(this.label1);
-        Gtk.Fixed.FixedChild w2 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.label1]));
-        w2.X = 15;
-        w2.Y = 13;
-        // Container child fixed.Gtk.Fixed+FixedChild
+        this.vbox = new Gtk.VBox();
+        this.vbox.Name = "vbox";
+        this.vbox.Spacing = 6;
+        // Container child vbox.Gtk.Box+BoxChild
+        this.UIManager.AddUiFromString("<ui><menubar name='menubar1'><menu name='FileAction' action='FileAction'/><menu name='HelpAction' action='HelpAction'/></menubar></ui>");
+        this.menubar1 = ((Gtk.MenuBar)(this.UIManager.GetWidget("/menubar1")));
+        this.menubar1.Name = "menubar1";
+        this.vbox.Add(this.menubar1);
+        Gtk.Box.BoxChild w2 = ((Gtk.Box.BoxChild)(this.vbox[this.menubar1]));
+        w2.Position = 0;
+        w2.Expand = false;
+        w2.Fill = false;
+        // Container child vbox.Gtk.Box+BoxChild
+        this.hbox1 = new Gtk.HBox();
+        this.hbox1.Name = "hbox1";
+        this.hbox1.Spacing = 6;
+        // Container child hbox1.Gtk.Box+BoxChild
+        this.hbox6 = new Gtk.HBox();
+        this.hbox6.Name = "hbox6";
+        this.hbox6.Spacing = 6;
+        // Container child hbox6.Gtk.Box+BoxChild
+        this.label4 = new Gtk.Label();
+        this.label4.Name = "label4";
+        this.label4.LabelProp = ".dvd file:";
+        this.hbox6.Add(this.label4);
+        Gtk.Box.BoxChild w3 = ((Gtk.Box.BoxChild)(this.hbox6[this.label4]));
+        w3.Position = 0;
+        w3.Expand = false;
+        w3.Fill = false;
+        w3.Padding = ((uint)(15));
+        this.hbox1.Add(this.hbox6);
+        Gtk.Box.BoxChild w4 = ((Gtk.Box.BoxChild)(this.hbox1[this.hbox6]));
+        w4.Position = 0;
+        this.vbox.Add(this.hbox1);
+        Gtk.Box.BoxChild w5 = ((Gtk.Box.BoxChild)(this.vbox[this.hbox1]));
+        w5.Position = 1;
+        w5.Expand = false;
+        w5.Fill = false;
+        // Container child vbox.Gtk.Box+BoxChild
+        this.hbox2 = new Gtk.HBox();
+        this.hbox2.Name = "hbox2";
+        this.hbox2.Spacing = 6;
+        // Container child hbox2.Gtk.Box+BoxChild
         this.entry = new Gtk.Entry();
         this.entry.CanFocus = true;
         this.entry.Name = "entry";
         this.entry.IsEditable = true;
         this.entry.InvisibleChar = '●';
-        this.@fixed.Add(this.entry);
-        Gtk.Fixed.FixedChild w3 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.entry]));
-        w3.X = 15;
-        w3.Y = 40;
-        // Container child fixed.Gtk.Fixed+FixedChild
-        this.filechooserbutton = new Gtk.FileChooserButton("", ((Gtk.FileChooserAction)(0)));
+        this.hbox2.Add(this.entry);
+        Gtk.Box.BoxChild w6 = ((Gtk.Box.BoxChild)(this.hbox2[this.entry]));
+        w6.Position = 0;
+        w6.Expand = false;
+        w6.Padding = ((uint)(15));
+        // Container child hbox2.Gtk.Box+BoxChild
+        this.fixed2 = new Gtk.Fixed();
+        this.fixed2.Name = "fixed2";
+        this.fixed2.HasWindow = false;
+        this.hbox2.Add(this.fixed2);
+        Gtk.Box.BoxChild w7 = ((Gtk.Box.BoxChild)(this.hbox2[this.fixed2]));
+        w7.Position = 1;
+        // Container child hbox2.Gtk.Box+BoxChild
+        this.filechooserbutton = new Gtk.FileChooserButton("Выберите файл", ((Gtk.FileChooserAction)(0)));
         this.filechooserbutton.Name = "filechooserbutton";
-        this.filechooserbutton.ShowHidden = true;
-        this.@fixed.Add(this.filechooserbutton);
-        Gtk.Fixed.FixedChild w4 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.filechooserbutton]));
-        w4.X = 213;
-        w4.Y = 40;
-        // Container child fixed.Gtk.Fixed+FixedChild
-        this.button_exit = new Gtk.Button();
-        this.button_exit.CanFocus = true;
-        this.button_exit.Name = "button_exit";
-        this.button_exit.UseUnderline = true;
-        this.button_exit.Label = "Exit ";
-        this.@fixed.Add(this.button_exit);
-        Gtk.Fixed.FixedChild w5 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.button_exit]));
-        w5.X = 247;
-        w5.Y = 220;
-        // Container child fixed.Gtk.Fixed+FixedChild
-        this.hbuttonbox5 = new Gtk.HButtonBox();
-        this.hbuttonbox5.Name = "hbuttonbox5";
-        this.@fixed.Add(this.hbuttonbox5);
-        Gtk.Fixed.FixedChild w6 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.hbuttonbox5]));
-        w6.X = 76;
-        w6.Y = 82;
-        // Container child fixed.Gtk.Fixed+FixedChild
-        this.label2 = new Gtk.Label();
-        this.label2.Name = "label2";
-        this.label2.LabelProp = "DVD recorder:";
-        this.@fixed.Add(this.label2);
-        Gtk.Fixed.FixedChild w7 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.label2]));
-        w7.X = 15;
-        w7.Y = 78;
-        // Container child fixed.Gtk.Fixed+FixedChild
+        this.hbox2.Add(this.filechooserbutton);
+        Gtk.Box.BoxChild w8 = ((Gtk.Box.BoxChild)(this.hbox2[this.filechooserbutton]));
+        w8.PackType = ((Gtk.PackType)(1));
+        w8.Position = 2;
+        w8.Expand = false;
+        w8.Padding = ((uint)(15));
+        this.vbox.Add(this.hbox2);
+        Gtk.Box.BoxChild w9 = ((Gtk.Box.BoxChild)(this.vbox[this.hbox2]));
+        w9.Position = 2;
+        w9.Expand = false;
+        w9.Fill = false;
+        // Container child vbox.Gtk.Box+BoxChild
+        this.hbox7 = new Gtk.HBox();
+        this.hbox7.Name = "hbox7";
+        this.hbox7.Spacing = 6;
+        // Container child hbox7.Gtk.Box+BoxChild
+        this.label5 = new Gtk.Label();
+        this.label5.Name = "label5";
+        this.label5.LabelProp = "DVD-RW drive:";
+        this.hbox7.Add(this.label5);
+        Gtk.Box.BoxChild w10 = ((Gtk.Box.BoxChild)(this.hbox7[this.label5]));
+        w10.Position = 0;
+        w10.Expand = false;
+        w10.Fill = false;
+        w10.Padding = ((uint)(15));
+        this.vbox.Add(this.hbox7);
+        Gtk.Box.BoxChild w11 = ((Gtk.Box.BoxChild)(this.vbox[this.hbox7]));
+        w11.Position = 3;
+        w11.Expand = false;
+        w11.Fill = false;
+        // Container child vbox.Gtk.Box+BoxChild
+        this.hbox3 = new Gtk.HBox();
+        this.hbox3.Name = "hbox3";
+        this.hbox3.Spacing = 6;
+        // Container child hbox3.Gtk.Box+BoxChild
         this.entry_dvd = new Gtk.Entry();
         this.entry_dvd.CanFocus = true;
         this.entry_dvd.Name = "entry_dvd";
         this.entry_dvd.Text = "/dev/";
         this.entry_dvd.IsEditable = true;
         this.entry_dvd.InvisibleChar = '●';
-        this.@fixed.Add(this.entry_dvd);
-        Gtk.Fixed.FixedChild w8 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.entry_dvd]));
-        w8.X = 15;
-        w8.Y = 105;
-        // Container child fixed.Gtk.Fixed+FixedChild
+        this.hbox3.Add(this.entry_dvd);
+        Gtk.Box.BoxChild w12 = ((Gtk.Box.BoxChild)(this.hbox3[this.entry_dvd]));
+        w12.Position = 0;
+        w12.Expand = false;
+        w12.Fill = false;
+        w12.Padding = ((uint)(15));
+        // Container child hbox3.Gtk.Box+BoxChild
+        this.fixed3 = new Gtk.Fixed();
+        this.fixed3.Name = "fixed3";
+        this.fixed3.HasWindow = false;
+        this.hbox3.Add(this.fixed3);
+        Gtk.Box.BoxChild w13 = ((Gtk.Box.BoxChild)(this.hbox3[this.fixed3]));
+        w13.Position = 1;
+        // Container child hbox3.Gtk.Box+BoxChild
+        this.hbuttonbox3 = new Gtk.HButtonBox();
+        this.hbuttonbox3.Name = "hbuttonbox3";
+        // Container child hbuttonbox3.Gtk.ButtonBox+ButtonBoxChild
+        this.button9 = new Gtk.Button();
+        this.button9.CanFocus = true;
+        this.button9.Name = "button9";
+        this.button9.UseUnderline = true;
+        this.button9.Label = "Autodetect";
+        this.hbuttonbox3.Add(this.button9);
+        Gtk.ButtonBox.ButtonBoxChild w14 = ((Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox3[this.button9]));
+        w14.Expand = false;
+        w14.Fill = false;
+        this.hbox3.Add(this.hbuttonbox3);
+        Gtk.Box.BoxChild w15 = ((Gtk.Box.BoxChild)(this.hbox3[this.hbuttonbox3]));
+        w15.Position = 2;
+        this.vbox.Add(this.hbox3);
+        Gtk.Box.BoxChild w16 = ((Gtk.Box.BoxChild)(this.vbox[this.hbox3]));
+        w16.Position = 4;
+        w16.Expand = false;
+        w16.Fill = false;
+        // Container child vbox.Gtk.Box+BoxChild
+        this.fixed4 = new Gtk.Fixed();
+        this.fixed4.Name = "fixed4";
+        this.fixed4.HasWindow = false;
+        // Container child fixed4.Gtk.Fixed+FixedChild
         this.checkbutton_dryrun = new Gtk.CheckButton();
         this.checkbutton_dryrun.CanFocus = true;
         this.checkbutton_dryrun.Name = "checkbutton_dryrun";
         this.checkbutton_dryrun.Label = "dry-run";
         this.checkbutton_dryrun.DrawIndicator = true;
         this.checkbutton_dryrun.UseUnderline = true;
-        this.@fixed.Add(this.checkbutton_dryrun);
-        Gtk.Fixed.FixedChild w9 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.checkbutton_dryrun]));
-        w9.X = 15;
-        w9.Y = 183;
-        // Container child fixed.Gtk.Fixed+FixedChild
+        this.fixed4.Add(this.checkbutton_dryrun);
+        Gtk.Fixed.FixedChild w17 = ((Gtk.Fixed.FixedChild)(this.fixed4[this.checkbutton_dryrun]));
+        w17.X = 15;
+        w17.Y = 3;
+        this.vbox.Add(this.fixed4);
+        Gtk.Box.BoxChild w18 = ((Gtk.Box.BoxChild)(this.vbox[this.fixed4]));
+        w18.Position = 5;
+        // Container child vbox.Gtk.Box+BoxChild
+        this.hbox5 = new Gtk.HBox();
+        this.hbox5.Name = "hbox5";
+        this.hbox5.Spacing = 6;
+        // Container child hbox5.Gtk.Box+BoxChild
         this.label3 = new Gtk.Label();
         this.label3.Name = "label3";
         this.label3.LabelProp = "Burning speed:";
-        this.@fixed.Add(this.label3);
-        Gtk.Fixed.FixedChild w10 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.label3]));
-        w10.X = 20;
-        w10.Y = 149;
-        // Container child fixed.Gtk.Fixed+FixedChild
+        this.hbox5.Add(this.label3);
+        Gtk.Box.BoxChild w19 = ((Gtk.Box.BoxChild)(this.hbox5[this.label3]));
+        w19.Position = 0;
+        w19.Expand = false;
+        w19.Fill = false;
+        w19.Padding = ((uint)(15));
+        // Container child hbox5.Gtk.Box+BoxChild
         this.combobox_speed = Gtk.ComboBox.NewText();
         this.combobox_speed.AppendText("2");
-        this.combobox_speed.AppendText("3");
         this.combobox_speed.AppendText("4");
+        this.combobox_speed.AppendText("6");
         this.combobox_speed.Name = "combobox_speed";
         this.combobox_speed.Active = 0;
-        this.@fixed.Add(this.combobox_speed);
-        Gtk.Fixed.FixedChild w11 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.combobox_speed]));
-        w11.X = 213;
-        w11.Y = 143;
-        // Container child fixed.Gtk.Fixed+FixedChild
-        this.button_autodvdrw = new Gtk.Button();
-        this.button_autodvdrw.CanFocus = true;
-        this.button_autodvdrw.Name = "button_autodvdrw";
-        this.button_autodvdrw.UseUnderline = true;
-        this.button_autodvdrw.Label = "auto detect";
-        this.@fixed.Add(this.button_autodvdrw);
-        Gtk.Fixed.FixedChild w12 = ((Gtk.Fixed.FixedChild)(this.@fixed[this.button_autodvdrw]));
-        w12.X = 213;
-        w12.Y = 106;
-        this.Add(this.@fixed);
+        this.hbox5.Add(this.combobox_speed);
+        Gtk.Box.BoxChild w20 = ((Gtk.Box.BoxChild)(this.hbox5[this.combobox_speed]));
+        w20.Position = 2;
+        w20.Expand = false;
+        w20.Fill = false;
+        w20.Padding = ((uint)(58));
+        this.vbox.Add(this.hbox5);
+        Gtk.Box.BoxChild w21 = ((Gtk.Box.BoxChild)(this.vbox[this.hbox5]));
+        w21.Position = 6;
+        w21.Expand = false;
+        w21.Fill = false;
+        // Container child vbox.Gtk.Box+BoxChild
+        this.hbuttonbox = new Gtk.HButtonBox();
+        this.hbuttonbox.Name = "hbuttonbox";
+        this.hbuttonbox.LayoutStyle = ((Gtk.ButtonBoxStyle)(1));
+        // Container child hbuttonbox.Gtk.ButtonBox+ButtonBoxChild
+        this.button_ok = new Gtk.Button();
+        this.button_ok.Sensitive = false;
+        this.button_ok.CanFocus = true;
+        this.button_ok.Name = "button_ok";
+        this.button_ok.UseUnderline = true;
+        this.button_ok.Label = "Burn";
+        this.hbuttonbox.Add(this.button_ok);
+        Gtk.ButtonBox.ButtonBoxChild w22 = ((Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox[this.button_ok]));
+        w22.Expand = false;
+        w22.Fill = false;
+        w22.Padding = ((uint)(15));
+        // Container child hbuttonbox.Gtk.ButtonBox+ButtonBoxChild
+        this.button_exit = new Gtk.Button();
+        this.button_exit.CanFocus = true;
+        this.button_exit.Name = "button_exit";
+        this.button_exit.UseUnderline = true;
+        this.button_exit.Label = "Exit";
+        this.hbuttonbox.Add(this.button_exit);
+        Gtk.ButtonBox.ButtonBoxChild w23 = ((Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox[this.button_exit]));
+        w23.Position = 1;
+        w23.Expand = false;
+        w23.Fill = false;
+        this.vbox.Add(this.hbuttonbox);
+        Gtk.Box.BoxChild w24 = ((Gtk.Box.BoxChild)(this.vbox[this.hbuttonbox]));
+        w24.Position = 8;
+        w24.Expand = false;
+        this.Add(this.vbox);
         if ((this.Child != null)) {
             this.Child.ShowAll();
         }
-        this.DefaultWidth = 314;
-        this.DefaultHeight = 287;
+        this.DefaultWidth = 396;
+        this.DefaultHeight = 312;
         this.Show();
         this.DeleteEvent += new Gtk.DeleteEventHandler(this.OnDeleteEvent);
-        this.button_ok.Clicked += new System.EventHandler(this.OnButtonOkClicked);
         this.entry.Changed += new System.EventHandler(this.OnEntryChanged);
         this.filechooserbutton.SelectionChanged += new System.EventHandler(this.OnFilechooserbuttonSelectionChanged);
+        this.entry_dvd.Changed += new System.EventHandler(this.OnEntryChanged);
+        this.button9.Clicked += new System.EventHandler(this.OnButtonAutodvdrwClicked);
+        this.checkbutton_dryrun.Clicked += new System.EventHandler(this.OnCheckbuttonDryrunPressed);
+        this.button_ok.Clicked += new System.EventHandler(this.OnButtonOkClicked);
         this.button_exit.Clicked += new System.EventHandler(this.OnButtonExitClicked);
-        this.entry_dvd.Changed += new System.EventHandler(this.OnEntryDvdChanged);
-        this.checkbutton_dryrun.Pressed += new System.EventHandler(this.OnCheckbuttonDryrunPressed);
-        this.button_autodvdrw.Clicked += new System.EventHandler(this.OnButtonAutodvdrwClicked);
     }
 }
