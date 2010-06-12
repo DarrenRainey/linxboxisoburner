@@ -286,10 +286,11 @@ public partial class MainWindow {
         this.combobox_speed.Active = 0;
         this.hbox5.Add(this.combobox_speed);
         Gtk.Box.BoxChild w20 = ((Gtk.Box.BoxChild)(this.hbox5[this.combobox_speed]));
-        w20.Position = 2;
+        w20.PackType = ((Gtk.PackType)(1));
+        w20.Position = 1;
         w20.Expand = false;
         w20.Fill = false;
-        w20.Padding = ((uint)(58));
+        w20.Padding = ((uint)(49));
         this.vbox.Add(this.hbox5);
         Gtk.Box.BoxChild w21 = ((Gtk.Box.BoxChild)(this.vbox[this.hbox5]));
         w21.Position = 6;

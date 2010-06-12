@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using Gtk;
 using Gdk;
+using System.IO;
 
 namespace LinXbox360isoBurner
 {	
@@ -24,7 +25,7 @@ namespace LinXbox360isoBurner
 			this.Deletable = false;
 			buttonend = false;
 			
-			trayicon = new StatusIcon("./icon.png");
+			trayicon = new StatusIcon(Pixbuf.LoadFromResource("icon.png"));
 			trayicon.Visible = false;
 			trayicon.Activate += HandleActivate;
 		}
