@@ -83,7 +83,7 @@ namespace LinXbox360isoBurner
 			int width = this.Allocation.Width;
 			int butwidth = button_cancel.Allocation.Width;
 			int x = width/2 - butwidth/2;
-			Gdk.Rectangle retangle = new Gdk.Rectangle(x, 54, butwidth, button_cancel.Allocation.Height);
+			Gdk.Rectangle retangle = new Gdk.Rectangle(x, button_cancel.Allocation.Y , butwidth, button_cancel.Allocation.Height);
 			button_cancel.Allocation = retangle;
 		}
 

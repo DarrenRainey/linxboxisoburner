@@ -6,7 +6,7 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="../bin/Debug/LinXbox360isoBurner.exe" internal="true" />
+    <widget-library name="../bin/Release/LinXbox360isoBurner.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="396 312">
     <action-group name="Default">
@@ -445,9 +445,9 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="LinXbox360isoBurner.BurningWindow" design-size="618 130">
+  <widget class="Gtk.Window" id="LinXbox360isoBurner.BurningWindow" design-size="211 124">
     <property name="MemberName" />
-    <property name="Title" translatable="yes">Burning... (Don't close this window)</property>
+    <property name="Title" translatable="yes">Burning...</property>
     <property name="Icon">resource:icon.png</property>
     <property name="WindowPosition">Center</property>
     <property name="Resizable">False</property>
@@ -465,7 +465,7 @@
         <child>
           <widget class="Gtk.Label" id="label_status">
             <property name="MemberName" />
-            <property name="Xpad">300</property>
+            <property name="Xpad">96</property>
             <property name="Ypad">5</property>
             <property name="Xalign">1</property>
             <property name="LabelProp" translatable="yes">...</property>
@@ -473,7 +473,8 @@
             <property name="SingleLineMode">True</property>
           </widget>
           <packing>
-            <property name="Y">16</property>
+            <property name="X">1</property>
+            <property name="Y">19</property>
           </packing>
         </child>
         <child>
@@ -485,8 +486,8 @@
             <property name="UseUnderline">True</property>
           </widget>
           <packing>
-            <property name="X">280</property>
-            <property name="Y">54</property>
+            <property name="X">75</property>
+            <property name="Y">53</property>
           </packing>
         </child>
       </widget>

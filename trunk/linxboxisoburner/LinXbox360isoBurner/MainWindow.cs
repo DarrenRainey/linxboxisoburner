@@ -3,6 +3,7 @@ using Gtk;
 using System.Diagnostics;
 using System.IO;
 using LinXbox360isoBurner;
+using System.Media;
 
 
 public partial class MainWindow: Gtk.Window
@@ -121,17 +122,17 @@ public partial class MainWindow: Gtk.Window
 		{
 			burning.Title = "Burning sucsesfull";				
 			burning.Label_burn = "Burning sucsesfull";
+			SystemSounds.Asterisk.Play();
 		}
 		if (process.ExitCode != 0)
 		{
 			burning.Title = "Error";
 			burning.Label_burn = error;
+			SystemSounds.Hand.Play();
 		}
 
 		burning.Button_text = "Close";
 		burning.trayicon.Blinking = true;
-		
-//		this.Title = "LinXbox360isoBurner";
 	}
 
 	
