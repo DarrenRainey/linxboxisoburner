@@ -14,9 +14,6 @@ namespace LinXbox360isoBurner
 		public bool dvdrwremember;
 		public string dvdrw;
 		
-		public string conffile
-		{get {return configfile;}}
-		
 		public Conf ()
 		{
 			UnixUserInfo user = UnixUserInfo.GetRealUser();
@@ -87,6 +84,7 @@ namespace LinXbox360isoBurner
 			sw.WriteLine("dvdrwremember=" + dvdrwremember.ToString());
 			sw.WriteLine("dvdrw=" + dvdrw);
 			sw.Flush();
+			sw.Dispose();
 		}
 	}
 }

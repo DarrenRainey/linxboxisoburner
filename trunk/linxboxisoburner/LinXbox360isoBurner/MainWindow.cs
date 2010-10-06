@@ -130,11 +130,11 @@ public partial class MainWindow: Gtk.Window
 		process.ErrorDataReceived += new DataReceivedEventHandler(HandleErrorDataReceived); 
 		process.Exited += new EventHandler(HandleExited);
 
-//		process.StartInfo.Arguments = argstring;
-//		process.StartInfo.FileName = "growisofs";
+		process.StartInfo.Arguments = argstring;
+		process.StartInfo.FileName = "growisofs";
 		
-		process.StartInfo.Arguments ="mail.ru -c 10"; // test strings
-		process.StartInfo.FileName = "ping";			// test strings
+//		process.StartInfo.Arguments ="mail.ru -c 10"; // test strings
+//		process.StartInfo.FileName = "ping";			// test strings
 //		label1.Text = argstring;                    // test string		
 		
 		logwriter = new StreamWriter(config.logparth, true);
