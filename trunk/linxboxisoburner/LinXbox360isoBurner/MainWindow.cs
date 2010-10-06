@@ -4,15 +4,39 @@ using System.Diagnostics;
 using System.IO;
 using LinXbox360isoBurner;
 using System.Media;
+using Mono.Unix;
 
 
 public partial class MainWindow: Gtk.Window
 {	
-	private  bool dryrun;
-	private Process process;
-	private BurningWindow burning;
-	private string error;
+	bool dryrun;
+	Process process;
+	BurningWindow burning;
+	string error;
+	Conf config;
+	StreamWriter logwriter;
+	
+	bool BurnSensetive 
+	{
+		set 
+		{
+			button_ok.Sensitive = value;
+			BurnAction.Sensitive = value;
+		}
+	}
+	
+	string logstring 
+	{
+		set
+		{
+			if (config.log)
+			{
+				logwriter.WriteLine(value);
+			}
+		}
+	}
 
+	// MainWindow Constructor
 	public MainWindow (): base (Gtk.WindowType.Toplevel)
 	{
 		Build ();
@@ -21,6 +45,23 @@ public partial class MainWindow: Gtk.Window
 		filter.Name="*.dvd";
 		filter.AddPattern("*.dvd");
 		filechooserbutton.AddFilter(filter);
+		
+		UnixUserInfo user =  UnixUserInfo.GetRealUser();
+		
+		if (!Directory.Exists(user.HomeDirectory + "/.linxbox360burner")) Directory.CreateDirectory(user.HomeDirectory + "/.linxbox360burner");
+		
+		if (!File.Exists(user.HomeDirectory + "/.linxbox360burner/conf"))
+		{
+			config = new Conf();
+			config.Commit();
+		}
+		else
+		{
+			config = new Conf(user.HomeDirectory + "/.linxbox360burner/conf");
+		}
+		
+		if (config.dvdrwremember) entry_dvd.Text = config.dvdrw;
+		
 	}
 	
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
@@ -89,18 +130,21 @@ public partial class MainWindow: Gtk.Window
 		process.ErrorDataReceived += new DataReceivedEventHandler(HandleErrorDataReceived); 
 		process.Exited += new EventHandler(HandleExited);
 
-		process.StartInfo.Arguments = argstring;
-		process.StartInfo.FileName = "growisofs";
-
-//		process.StartInfo.Arguments ="mail.ru -c 10"; // test strings
-//		process.StartInfo.FileName = "ping";			// test strings
+//		process.StartInfo.Arguments = argstring;
+//		process.StartInfo.FileName = "growisofs";
+		
+		process.StartInfo.Arguments ="mail.ru -c 10"; // test strings
+		process.StartInfo.FileName = "ping";			// test strings
 //		label1.Text = argstring;                    // test string		
+		
+		logwriter = new StreamWriter(config.logparth, true);
+		logstring = "============ <START> ============";
+		logstring = "Start burning " + DateTime.Now.ToString();
+			
 		process.Start();
 		
 		process.BeginOutputReadLine();
 		process.BeginErrorReadLine();
-		
-//		this.Title = "Burning...";
 		
 		burning = new BurningWindow(ref process);
 		burning.Destroyed += HandleDestroyed;
@@ -127,23 +171,33 @@ public partial class MainWindow: Gtk.Window
 		{
 			burning.Title = "Burning sucsesfull";				
 			burning.Label_burn = "Burning sucsesfull";
+			logstring = "Burning sucsesfull " + DateTime.Now.ToString();
+			if (config.dvdrwremember == true) {config.dvdrw = entry_dvd.Text; config.Commit();}
 			SystemSounds.Asterisk.Play();
 		}
 		if (process.ExitCode != 0)
 		{
 			burning.Title = "Error";
 			burning.Label_burn = error;
+			logstring = error;
 			SystemSounds.Hand.Play();
 		}
 
 		burning.Button_text = "Close";
+		
+		logstring = "Burning stops " + DateTime.Now.ToString();
+		logstring = "============ <END> ============";
+		if (config.log) logwriter.WriteLine();
+		logwriter.Flush();
+		logwriter.Dispose();
+		
 		burning.trayicon.Blinking = true;
 	}
-
 	
 	protected void HandleOutputDataReceived(object sender, DataReceivedEventArgs e)
 	{ 
 		burning.Label_burn = e.Data.ToString();
+		logstring =  e.Data.ToString();
 	}
 
 	protected virtual void OnCheckbuttonDryrunPressed (object sender, System.EventArgs e)
@@ -181,12 +235,17 @@ public partial class MainWindow: Gtk.Window
 		ab.Visible = true;
 	}
 	
-	bool BurnSensetive 
+	protected virtual void OnPreferencesActionActivated (object sender, System.EventArgs e)
 	{
-		set 
-		{
-			button_ok.Sensitive = value;
-			BurnAction1.Sensitive = value;
-		}
+		Preferences prefs = new Preferences(ref config);
+		this.Sensitive = false;
+		
+		prefs.Destroyed+= delegate(object send, EventArgs c) 
+							{
+								this.Sensitive = true;
+							};
+		
+		prefs.Visible = true;
 	}
+	
 }
