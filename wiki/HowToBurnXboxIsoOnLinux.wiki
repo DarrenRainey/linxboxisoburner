@@ -4,11 +4,15 @@
 *1) Installing "dvd+rw-tools"*
 
 Type in terminal
+
 - for debian, *buntu: _apt-get install 'dvd+rw-tools'_
+
 - for Fedora: _yum install 'dvd+rw-tools'_
+
 - for RedHat: _up2date 'dvd+rw-tools'_
 
 *2) Installing Mono*
+
 If you are using Ubuntu or openSUSE you already have mono installed.
 
 If you are using another distro there is a good chance it has Mono packages available in its repositories. Please consult your distro for installation instructions or try to find more information here - http://www.go-mono.com/mono-downloads/download.html.
@@ -18,6 +22,7 @@ If you are using another distro there is a good chance it has Mono packages avai
 Download and unpack the latest version of LinXbox360isoburner.
 
 Type in terminal
+
 _mono /DirectoryWithApplication/LinXbox360isoBurner.bin_
 
 or run start.sh script
@@ -25,4 +30,5 @@ or run start.sh script
 *4) Burning Xbox iso*
 
 - choose .dvd file and Dvd-rw recorder (something about _/dev/sr0 or /dev/dvdrw0_)
+
 - press "Burn" and wait until burning process is over
