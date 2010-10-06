@@ -5,7 +5,7 @@
 
 Type in terminal
 
-- for debian, *buntu: _apt-get install 'dvd+rw-tools'_
+- for debian, Ubuntu: _apt-get install 'dvd+rw-tools'_
 
 - for Fedora: _yum install 'dvd+rw-tools'_
 
