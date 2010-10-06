@@ -73,6 +73,7 @@ namespace LinXbox360isoBurner
 				}
 			}		
 			while (!end);
+			sr.Dispose();
 		}
 			
 		

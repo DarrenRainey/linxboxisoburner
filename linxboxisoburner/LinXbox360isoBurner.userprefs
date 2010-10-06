@@ -1,14 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" ctype="Workspace" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ctype="Workspace" />
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
   <MonoDevelop.Ide.Workbench ActiveDocument="LinXbox360isoBurner/MainWindow.cs" ctype="Workbench">
     <Files>
-      <File FileName="LinXbox360isoBurner/BurningWindow.cs" Line="90" Column="54" />
-      <File FileName="LinXbox360isoBurner/MainWindow.cs" Line="21" Column="17" />
-      <File FileName="LinXbox360isoBurner/FileError.cs" Line="11" Column="26" />
-      <File FileName="LinXbox360isoBurner/Dvdrwchoose.cs" Line="8" Column="47" />
+      <File FileName="LinXbox360isoBurner/Preferences.cs" Line="38" Column="19" />
+      <File FileName="LinXbox360isoBurner/MainWindow.cs" Line="133" Column="1" />
+      <File FileName="LinXbox360isoBurner/Conf.cs" Line="86" Column="11" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,4 +22,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches ctype="PinnedWatchStore" />
 </Properties>
