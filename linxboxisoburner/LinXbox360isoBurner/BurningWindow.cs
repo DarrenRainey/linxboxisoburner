@@ -12,6 +12,22 @@ namespace LinXbox360isoBurner
 		private Process burnproc;
 		private bool buttonend;
 		public StatusIcon trayicon;
+		
+		public string Label_burn
+		{
+			get { return label_status.Text;}
+			set 
+			{
+				label_status.Text = value;
+				trayicon.Tooltip = value;
+			}
+		}
+			
+		public string Button_text
+		{
+			get { return button_cancel.Label;}
+			set {button_cancel.Label = value;}
+		}
 			
 			
 		public BurningWindow(ref Process proc) : 
@@ -25,7 +41,7 @@ namespace LinXbox360isoBurner
 			this.Deletable = false;
 			buttonend = false;
 			
-			trayicon = new StatusIcon(Pixbuf.LoadFromResource("icon.png"));
+			trayicon = new StatusIcon(Pixbuf.LoadFromResource("LinXbox360isoBurner.icon.png"));
 			trayicon.Visible = false;
 			trayicon.Activate += HandleActivate;
 		}
@@ -42,22 +58,6 @@ namespace LinXbox360isoBurner
 			burnproc.Kill();
 			buttonend = true;
 			this.Destroy();
-		}
-		
-		public string Label_burn
-		{
-			get { return label_status.Text;}
-			set 
-			{
-				label_status.Text = value;
-				trayicon.Tooltip = value;
-			}
-		}
-			
-		public string Button_text
-		{
-			get { return button_cancel.Label;}
-			set {button_cancel.Label = value;}
 		}
 		
 		public void ButtonHeadlerChange()
