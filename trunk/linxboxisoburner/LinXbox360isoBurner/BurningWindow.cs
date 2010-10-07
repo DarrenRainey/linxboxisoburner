@@ -46,13 +46,6 @@ namespace LinXbox360isoBurner
 			trayicon.Activate += HandleActivate;
 		}
 
-		void HandleActivate(object sender, EventArgs e)
-		{
-			this.Maximize();
-			this.Visible = true;
-			trayicon.Visible = false;
-		}
-
 		void HandleCancel(object sender, EventArgs e)
 		{
 			burnproc.Kill();
@@ -60,24 +53,21 @@ namespace LinXbox360isoBurner
 			this.Destroy();
 		}
 		
-		public void ButtonHeadlerChange()
-		{
-			this.button_cancel.Clicked -= HandleCancel;
-			this.button_cancel.Clicked += HandleClosing;
-			buttonend = true;
-		}
-		
-		void HandleClosing(object sender, EventArgs e)
-		{
-			this.Destroy();	
-		}
-
+		// Prevents closing this window by pressin "x" (this.Deletable = false doesnt work if you use window manager diffent from Metacity
 		protected virtual void OnDeleteEvent (object o, Gtk.DeleteEventArgs args)
 		{
 			if (buttonend) args.RetVal = false;
 			else args.RetVal = true;
 		}
+		
+		public void ButtonHeadlerChange()
+		{
+			this.button_cancel.Clicked -= HandleCancel;
+			this.button_cancel.Clicked += delegate(object sender, EventArgs e) {this.Destroy();};
+			buttonend = true;
+		}
 
+		// Keeps "Cancel" button centered
 		protected virtual void OnSizeAllocated (object o, Gtk.SizeAllocatedArgs args)
 		{
 			int width = this.Allocation.Width;
@@ -87,6 +77,7 @@ namespace LinXbox360isoBurner
 			button_cancel.Allocation = retangle;
 		}
 
+		// Minimizes this window into system tray
 		protected virtual void OnWindowStateEvent (object o, Gtk.WindowStateEventArgs args)
 		{
 			if (args.Event.Window.State == WindowState.Iconified)
@@ -94,6 +85,13 @@ namespace LinXbox360isoBurner
 				trayicon.Visible = true;
 				this.Visible = false;
 			}
+		}
+		
+		void HandleActivate(object sender, EventArgs e)
+		{
+			this.Maximize();
+			this.Visible = true;
+			trayicon.Visible = false;
 		}
 	}		
 }

@@ -6,7 +6,7 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="../bin/Debug/LinXbox360isoBurner.exe" internal="true" />
+    <widget-library name="../bin/Release/LinXbox360isoBurner.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="396 325">
     <action-group name="Default">
@@ -106,6 +106,7 @@
         <property name="Type">Action</property>
         <property name="Label" translatable="yes">About...</property>
         <property name="ShortLabel" translatable="yes">About...</property>
+        <signal name="Activated" handler="OnAboutActionActivated" />
       </action>
     </action-group>
     <property name="MemberName" />
@@ -632,7 +633,7 @@
     <property name="MemberName" />
     <property name="Title" translatable="yes">About</property>
     <property name="Icon">resource:LinXbox360isoBurner.icon.png</property>
-    <property name="WindowPosition">CenterOnParent</property>
+    <property name="WindowPosition">Center</property>
     <property name="Resizable">False</property>
     <property name="AllowGrow">False</property>
     <property name="Gravity">Center</property>
@@ -663,7 +664,7 @@
                 <child>
                   <widget class="Gtk.Label" id="label2">
                     <property name="MemberName" />
-                    <property name="LabelProp">LinXbox360isoBurner ver. 0.2.0</property>
+                    <property name="LabelProp">LinXbox360isoBurner ver. 0.3.x</property>
                     <property name="Justify">Center</property>
                   </widget>
                   <packing>

@@ -386,6 +386,7 @@ public partial class MainWindow
 		this.cdromAction1.Activated += new global::System.EventHandler (this.OnButtonOkClicked);
 		this.preferencesAction.Activated += new global::System.EventHandler (this.OnPreferencesActionActivated);
 		this.stopAction.Activated += new global::System.EventHandler (this.OnButtonExitClicked);
+		this.AboutAction1.Activated += new global::System.EventHandler (this.OnAboutActionActivated);
 		this.entry.Changed += new global::System.EventHandler (this.OnEntryChanged);
 		this.filechooserbutton.SelectionChanged += new global::System.EventHandler (this.OnFilechooserbuttonSelectionChanged);
 		this.entry_dvd.Changed += new global::System.EventHandler (this.OnEntryChanged);
