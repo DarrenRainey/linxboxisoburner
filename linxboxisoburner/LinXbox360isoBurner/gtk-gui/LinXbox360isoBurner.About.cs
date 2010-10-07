@@ -29,7 +29,7 @@ namespace LinXbox360isoBurner
 			this.Name = "LinXbox360isoBurner.About";
 			this.Title = "About";
 			this.Icon = global::Gdk.Pixbuf.LoadFromResource ("LinXbox360isoBurner.icon.png");
-			this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+			this.WindowPosition = ((global::Gtk.WindowPosition)(1));
 			this.Resizable = false;
 			this.AllowGrow = false;
 			this.Gravity = ((global::Gdk.Gravity)(5));
@@ -57,7 +57,7 @@ namespace LinXbox360isoBurner
 			// Container child vbox6.Gtk.Box+BoxChild
 			this.label2 = new global::Gtk.Label ();
 			this.label2.Name = "label2";
-			this.label2.LabelProp = "LinXbox360isoBurner ver. 0.2.0";
+			this.label2.LabelProp = "LinXbox360isoBurner ver. 0.3.x";
 			this.label2.Justify = ((global::Gtk.Justification)(2));
 			this.vbox6.Add (this.label2);
 			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.label2]));

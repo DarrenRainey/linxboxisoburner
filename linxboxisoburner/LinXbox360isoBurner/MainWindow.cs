@@ -41,6 +41,7 @@ public partial class MainWindow: Gtk.Window
 	{
 		Build ();
 		
+		// Adds "*.dvd" fillter to FileChooserDialog
 		FileFilter filter = new FileFilter();
 		filter.Name="*.dvd";
 		filter.AddPattern("*.dvd");
@@ -48,6 +49,8 @@ public partial class MainWindow: Gtk.Window
 		
 		UnixUserInfo user =  UnixUserInfo.GetRealUser();
 		
+		
+		// Checks existing of configuration file and loads configuration of the programm
 		if (!Directory.Exists(user.HomeDirectory + "/.linxbox360burner")) Directory.CreateDirectory(user.HomeDirectory + "/.linxbox360burner");
 		
 		if (!File.Exists(user.HomeDirectory + "/.linxbox360burner/conf"))
@@ -64,28 +67,12 @@ public partial class MainWindow: Gtk.Window
 		
 	}
 	
-	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
-	{
-		Application.Quit ();
-		a.RetVal = true;
-	}
-
-	protected virtual void OnButtonExitClicked (object sender, System.EventArgs e)
-	{
-		Application.Quit();
-	}
-
-	protected virtual void OnFilechooserbuttonSelectionChanged (object sender, System.EventArgs e)
-	{
-		entry.Text = filechooserbutton.Filename;
-		if (!(entry.Text =="") && !(entry_dvd.Text == "")) BurnSensetive = true;
-	}
-
+	// Starts burning process
 	protected virtual void OnButtonOkClicked (object sender, System.EventArgs e)
 	{	
-		
+		// Check .dvd file
 		FileInfo dvdfile = new FileInfo(entry.Text);
-		if (!dvdfile.Exists || !(dvdfile.Extension == ".dvd")) 
+		if (!dvdfile.Exists) 
 		{
 			FileError fileerrorwindow = new FileError();
 			fileerrorwindow.Show();
@@ -120,6 +107,7 @@ public partial class MainWindow: Gtk.Window
 		argstring +="-use-the-force-luke=dao -use-the-force-luke=break:" 
 		               + layerbreak + " -dvd-compat -speed=" + speed + " -Z " + dvdrw + "=" + isoname;
 		
+		// Creates "growisofs" process and redirect its output to this programm
 		process = new Process();
 		process.StartInfo.UseShellExecute = false;
 		process.StartInfo.RedirectStandardOutput = true;
@@ -134,8 +122,7 @@ public partial class MainWindow: Gtk.Window
 		process.StartInfo.FileName = "growisofs";
 		
 //		process.StartInfo.Arguments ="mail.ru -c 10"; // test strings
-//		process.StartInfo.FileName = "ping";			// test strings
-//		label1.Text = argstring;                    // test string		
+//		process.StartInfo.FileName = "ping";			// test strings	
 		
 		logwriter = new StreamWriter(config.logparth, true);
 		logstring = "============ <START> ============";
@@ -147,22 +134,24 @@ public partial class MainWindow: Gtk.Window
 		process.BeginErrorReadLine();
 		
 		burning = new BurningWindow(ref process);
-		burning.Destroyed += HandleDestroyed;
+		burning.Destroyed += delegate(object send, EventArgs c) {this.Visible = true;};
 		burning.ShowAll();
 		
 		this.Visible = false;
 	}
-
-	void HandleDestroyed(object sender, EventArgs e)
-	{
-		this.Visible = true;
+	
+	// Next three methods are process event handlers
+	protected void HandleOutputDataReceived(object sender, DataReceivedEventArgs e)
+	{ 
+		burning.Label_burn = e.Data.ToString();
+		logstring =  e.Data.ToString();
 	}
-
+	
 	protected	void HandleErrorDataReceived(object sender, DataReceivedEventArgs e)
 	{
 		error =  e.Data.ToString();
 	}
-
+	
 	protected void  HandleExited(object sender, EventArgs e)
 	{
 		burning.ButtonHeadlerChange();
@@ -194,12 +183,24 @@ public partial class MainWindow: Gtk.Window
 		burning.trayicon.Blinking = true;
 	}
 	
-	protected void HandleOutputDataReceived(object sender, DataReceivedEventArgs e)
-	{ 
-		burning.Label_burn = e.Data.ToString();
-		logstring =  e.Data.ToString();
+	// Next methods are different GUI events handlers
+	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
+	{
+		Application.Quit ();
+		a.RetVal = true;
 	}
 
+	protected virtual void OnButtonExitClicked (object sender, System.EventArgs e)
+	{
+		Application.Quit();
+	}
+
+	protected virtual void OnFilechooserbuttonSelectionChanged (object sender, System.EventArgs e)
+	{
+		entry.Text = filechooserbutton.Filename;
+		if (!(entry.Text =="") && !(entry_dvd.Text == "")) BurnSensetive = true;
+	}
+	
 	protected virtual void OnCheckbuttonDryrunPressed (object sender, System.EventArgs e)
 	{
 			dryrun = !dryrun;
@@ -239,7 +240,6 @@ public partial class MainWindow: Gtk.Window
 	{
 		Preferences prefs = new Preferences(ref config);
 		this.Sensitive = false;
-		
 		prefs.Destroyed+= delegate(object send, EventArgs c) 
 							{
 								this.Sensitive = true;

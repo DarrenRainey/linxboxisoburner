@@ -54,7 +54,7 @@ namespace LinXbox360isoBurner
 				switch (args[0])
 				{
 				case "log":
-					if (Convert.ToBoolean(args[1]) == true) log = true;
+					if (Convert.ToBoolean(args[1])) log = true;
 						else log = false;
 					break;
 					
@@ -63,7 +63,7 @@ namespace LinXbox360isoBurner
 					break;
 					
 				case "dvdrwremember":
-					if (Convert.ToBoolean(args[1]) == true) dvdrwremember = true;
+					if (Convert.ToBoolean(args[1])) dvdrwremember = true;
 						else dvdrwremember = false;
 					break;
 					
