@@ -5,11 +5,11 @@
 
 Type in terminal
 
-- for debian, Ubuntu: _apt-get install 'dvd+rw-tools'_
+- for debian, Ubuntu: {{{apt-get install 'dvd+rw-tools'}}}
 
-- for Fedora: _yum install 'dvd+rw-tools'_
+- for Fedora: {{{yum install 'dvd+rw-tools'}}}
 
-- for RedHat: _up2date 'dvd+rw-tools'_
+- for RedHat: {{{up2date 'dvd+rw-tools'}}}
 
 *2) Installing Mono*
 
@@ -19,13 +19,13 @@ If you are using another distro there is a good chance it has Mono packages avai
 
 *3) Running LinXbox360isoburner*
 
-Download and unpack the latest version of LinXbox360isoburner.
+Download and unpack the latest version of _LinXbox360isoburner_.
 
 Type in terminal
 
-_mono /DirectoryWithApplication/LinXbox360isoBurner.bin_
+{{{mono /DirectoryWithApplication/LinXbox360isoBurner.bin}}}
 
-or run start.sh script
+or run _start.sh_ script
 
 *4) Burning Xbox iso*
 
