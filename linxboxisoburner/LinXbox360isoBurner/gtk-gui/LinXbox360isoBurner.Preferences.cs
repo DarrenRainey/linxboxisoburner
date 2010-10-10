@@ -10,13 +10,23 @@ namespace LinXbox360isoBurner
 
 		private global::Gtk.CheckButton checkbutton_log;
 
+		private global::Gtk.HBox hbox3;
+
+		private global::Gtk.Label label1;
+
+		private global::Gtk.SpinButton spinbutton_logsize;
+
+		private global::Gtk.Label label3;
+
 		private global::Gtk.HBox hbox1;
 
 		private global::Gtk.Label label2;
 
 		private global::Gtk.HBox hbox2;
 
-		private global::Gtk.Entry entry_logfileparth;
+		private global::Gtk.Entry entry_logfilepath;
+
+		private global::Gtk.FileChooserButton filechooserbutton_log;
 
 		private global::Gtk.Fixed fixed2;
 
@@ -36,6 +46,7 @@ namespace LinXbox360isoBurner
 			this.Title = "Preferences";
 			this.Icon = global::Gdk.Pixbuf.LoadFromResource ("LinXbox360isoBurner.icon.png");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(1));
+			this.BorderWidth = ((uint)(9));
 			this.Resizable = false;
 			this.AllowGrow = false;
 			this.Gravity = ((global::Gdk.Gravity)(5));
@@ -64,43 +75,90 @@ namespace LinXbox360isoBurner
 			w2.Expand = false;
 			w2.Fill = false;
 			// Container child vbox2.Gtk.Box+BoxChild
+			this.hbox3 = new global::Gtk.HBox ();
+			this.hbox3.Name = "hbox3";
+			this.hbox3.Spacing = 6;
+			// Container child hbox3.Gtk.Box+BoxChild
+			this.label1 = new global::Gtk.Label ();
+			this.label1.Name = "label1";
+			this.label1.LabelProp = "Log file size";
+			this.hbox3.Add (this.label1);
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.label1]));
+			w3.Position = 0;
+			w3.Expand = false;
+			w3.Fill = false;
+			w3.Padding = ((uint)(15));
+			// Container child hbox3.Gtk.Box+BoxChild
+			this.spinbutton_logsize = new global::Gtk.SpinButton (0, 10000000, 1);
+			this.spinbutton_logsize.CanFocus = true;
+			this.spinbutton_logsize.Name = "spinbutton_logsize";
+			this.spinbutton_logsize.Adjustment.PageIncrement = 10;
+			this.spinbutton_logsize.ClimbRate = 1;
+			this.spinbutton_logsize.Numeric = true;
+			this.hbox3.Add (this.spinbutton_logsize);
+			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.spinbutton_logsize]));
+			w4.Position = 1;
+			w4.Expand = false;
+			w4.Fill = false;
+			// Container child hbox3.Gtk.Box+BoxChild
+			this.label3 = new global::Gtk.Label ();
+			this.label3.Name = "label3";
+			this.label3.LabelProp = "Kb";
+			this.hbox3.Add (this.label3);
+			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.label3]));
+			w5.Position = 2;
+			w5.Expand = false;
+			w5.Fill = false;
+			this.vbox2.Add (this.hbox3);
+			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbox3]));
+			w6.Position = 1;
+			w6.Expand = false;
+			w6.Fill = false;
+			// Container child vbox2.Gtk.Box+BoxChild
 			this.hbox1 = new global::Gtk.HBox ();
 			this.hbox1.Name = "hbox1";
 			this.hbox1.Spacing = 6;
 			// Container child hbox1.Gtk.Box+BoxChild
 			this.label2 = new global::Gtk.Label ();
 			this.label2.Name = "label2";
-			this.label2.LabelProp = "Log file parth:";
+			this.label2.LabelProp = "Log file path:";
 			this.hbox1.Add (this.label2);
-			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.label2]));
-			w3.Position = 0;
-			w3.Expand = false;
-			w3.Fill = false;
-			w3.Padding = ((uint)(15));
+			global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.label2]));
+			w7.Position = 0;
+			w7.Expand = false;
+			w7.Fill = false;
+			w7.Padding = ((uint)(15));
 			this.vbox2.Add (this.hbox1);
-			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbox1]));
-			w4.Position = 1;
-			w4.Expand = false;
-			w4.Fill = false;
+			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbox1]));
+			w8.Position = 2;
+			w8.Expand = false;
+			w8.Fill = false;
 			// Container child vbox2.Gtk.Box+BoxChild
 			this.hbox2 = new global::Gtk.HBox ();
 			this.hbox2.Name = "hbox2";
 			this.hbox2.Spacing = 6;
 			// Container child hbox2.Gtk.Box+BoxChild
-			this.entry_logfileparth = new global::Gtk.Entry ();
-			this.entry_logfileparth.CanFocus = true;
-			this.entry_logfileparth.Name = "entry_logfileparth";
-			this.entry_logfileparth.IsEditable = true;
-			this.entry_logfileparth.InvisibleChar = '●';
-			this.hbox2.Add (this.entry_logfileparth);
-			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox2[this.entry_logfileparth]));
-			w5.Position = 0;
-			w5.Padding = ((uint)(17));
+			this.entry_logfilepath = new global::Gtk.Entry ();
+			this.entry_logfilepath.CanFocus = true;
+			this.entry_logfilepath.Name = "entry_logfilepath";
+			this.entry_logfilepath.IsEditable = true;
+			this.entry_logfilepath.InvisibleChar = '●';
+			this.hbox2.Add (this.entry_logfilepath);
+			global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.hbox2[this.entry_logfilepath]));
+			w9.Position = 0;
+			w9.Padding = ((uint)(17));
+			// Container child hbox2.Gtk.Box+BoxChild
+			this.filechooserbutton_log = new global::Gtk.FileChooserButton ("Выберите файл", ((global::Gtk.FileChooserAction)(2)));
+			this.filechooserbutton_log.Name = "filechooserbutton_log";
+			this.filechooserbutton_log.ShowHidden = true;
+			this.hbox2.Add (this.filechooserbutton_log);
+			global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.hbox2[this.filechooserbutton_log]));
+			w10.Position = 1;
 			this.vbox2.Add (this.hbox2);
-			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbox2]));
-			w6.Position = 2;
-			w6.Expand = false;
-			w6.Fill = false;
+			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbox2]));
+			w11.Position = 3;
+			w11.Expand = false;
+			w11.Fill = false;
 			// Container child vbox2.Gtk.Box+BoxChild
 			this.fixed2 = new global::Gtk.Fixed ();
 			this.fixed2.Name = "fixed2";
@@ -114,13 +172,13 @@ namespace LinXbox360isoBurner
 			this.checkbutton_remdvdrw.UseUnderline = true;
 			this.checkbutton_remdvdrw.BorderWidth = ((uint)(5));
 			this.fixed2.Add (this.checkbutton_remdvdrw);
-			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.checkbutton_remdvdrw]));
-			w7.X = 7;
+			global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.checkbutton_remdvdrw]));
+			w12.X = 7;
 			this.vbox2.Add (this.fixed2);
-			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.fixed2]));
-			w8.Position = 3;
-			w8.Expand = false;
-			w8.Fill = false;
+			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.fixed2]));
+			w13.Position = 4;
+			w13.Expand = false;
+			w13.Fill = false;
 			// Container child vbox2.Gtk.Box+BoxChild
 			this.hbuttonbox2 = new global::Gtk.HButtonBox ();
 			this.hbuttonbox2.Name = "hbuttonbox2";
@@ -132,9 +190,9 @@ namespace LinXbox360isoBurner
 			this.button_ok.UseUnderline = true;
 			this.button_ok.Label = "Ok";
 			this.hbuttonbox2.Add (this.button_ok);
-			global::Gtk.ButtonBox.ButtonBoxChild w9 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2[this.button_ok]));
-			w9.Expand = false;
-			w9.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w14 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2[this.button_ok]));
+			w14.Expand = false;
+			w14.Fill = false;
 			// Container child hbuttonbox2.Gtk.ButtonBox+ButtonBoxChild
 			this.button_cancel = new global::Gtk.Button ();
 			this.button_cancel.CanFocus = true;
@@ -142,23 +200,26 @@ namespace LinXbox360isoBurner
 			this.button_cancel.UseUnderline = true;
 			this.button_cancel.Label = "Cancel";
 			this.hbuttonbox2.Add (this.button_cancel);
-			global::Gtk.ButtonBox.ButtonBoxChild w10 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2[this.button_cancel]));
-			w10.Position = 1;
-			w10.Expand = false;
-			w10.Fill = false;
+			global::Gtk.ButtonBox.ButtonBoxChild w15 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2[this.button_cancel]));
+			w15.Position = 1;
+			w15.Expand = false;
+			w15.Fill = false;
 			this.vbox2.Add (this.hbuttonbox2);
-			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbuttonbox2]));
-			w11.Position = 4;
-			w11.Expand = false;
-			w11.Fill = false;
+			global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbuttonbox2]));
+			w16.Position = 5;
+			w16.Expand = false;
+			w16.Fill = false;
 			this.Add (this.vbox2);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
-			this.DefaultWidth = 378;
-			this.DefaultHeight = 207;
+			this.DefaultWidth = 421;
+			this.DefaultHeight = 246;
 			this.Show ();
 			this.checkbutton_log.Pressed += new global::System.EventHandler (this.OnCheckbuttonLogPressed);
+			this.spinbutton_logsize.ValueChanged += new global::System.EventHandler (this.OnSpinbutton1ValueChanged);
+			this.entry_logfilepath.Changed += new global::System.EventHandler (this.OnEntryLogfileparthChanged);
+			this.filechooserbutton_log.SelectionChanged += new global::System.EventHandler (this.OnFilechooserbuttonLogSelectionChanged);
 			this.checkbutton_remdvdrw.Pressed += new global::System.EventHandler (this.OnCheckbuttonRemdvdrwPressed);
 			this.button_ok.Pressed += new global::System.EventHandler (this.OnButtonOkPressed);
 			this.button_cancel.Pressed += new global::System.EventHandler (this.OnButtonCancelPressed);

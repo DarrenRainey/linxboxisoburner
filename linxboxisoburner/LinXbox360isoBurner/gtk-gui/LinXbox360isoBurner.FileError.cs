@@ -22,6 +22,7 @@ namespace LinXbox360isoBurner
 			this.Title = "FileError";
 			this.Icon = global::Gdk.Pixbuf.LoadFromResource ("LinXbox360isoBurner.icon.png");
 			this.WindowPosition = ((global::Gtk.WindowPosition)(3));
+			this.BorderWidth = ((uint)(20));
 			this.Resizable = false;
 			this.AllowGrow = false;
 			this.Gravity = ((global::Gdk.Gravity)(10));
@@ -69,7 +70,7 @@ namespace LinXbox360isoBurner
 				this.Child.ShowAll ();
 			}
 			this.DefaultWidth = 201;
-			this.DefaultHeight = 117;
+			this.DefaultHeight = 130;
 			this.Show ();
 			this.button.Clicked += new global::System.EventHandler (this.OnButtonClicked);
 		}

@@ -15,7 +15,6 @@ namespace LinXbox360isoBurner
 		
 		public string Label_burn
 		{
-			get { return label_status.Text;}
 			set 
 			{
 				label_status.Text = value;
@@ -25,7 +24,6 @@ namespace LinXbox360isoBurner
 			
 		public string Button_text
 		{
-			get { return button_cancel.Label;}
 			set {button_cancel.Label = value;}
 		}
 			
@@ -53,7 +51,7 @@ namespace LinXbox360isoBurner
 			this.Destroy();
 		}
 		
-		// Prevents closing this window by pressin "x" (this.Deletable = false doesnt work if you use window manager diffent from Metacity
+		// Prevents closing this window by pressing "x" (this.Deletable = false - doesnt work if you use window manager diffent from Metacity
 		protected virtual void OnDeleteEvent (object o, Gtk.DeleteEventArgs args)
 		{
 			if (buttonend) args.RetVal = false;
