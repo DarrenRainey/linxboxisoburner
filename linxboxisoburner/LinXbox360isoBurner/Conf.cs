@@ -39,7 +39,7 @@ namespace LinXbox360isoBurner
 			ReadConf(configfile);
 		}
 		
-		public void ReadConf (string file)
+		private void ReadConf (string file)
 		{
 			configfile = file;
 			
@@ -56,8 +56,11 @@ namespace LinXbox360isoBurner
 				switch (args[0])
 				{
 				case "log":
-					if (Convert.ToBoolean(args[1])) log = true;
-						else log = false;
+					try
+					{
+					log = Convert.ToBoolean(args[1]);
+					}
+					catch (FormatException) {log = false;};
 					break;
 					
 				case "logpath":
@@ -65,16 +68,24 @@ namespace LinXbox360isoBurner
 					break;
 					
 				case "logsize":
+					try
+					{
 					logsize = Convert.ToInt32(args[1]);
+					}
+					catch (FormatException) {logsize = 1000;};
 					break;
 					
 				case "dvdrwremember":
-					if (Convert.ToBoolean(args[1])) dvdrwremember = true;
-						else dvdrwremember = false;
+					try	
+					{
+					dvdrwremember = Convert.ToBoolean(args[1]);
+					}
+					catch (FormatException) {dvdrwremember = true;};
 					break;
 					
 				case "dvdrw":
-					dvdrw = args[1];
+					if (File.Exists(args[1])) dvdrw = args[1];
+					else dvdrw = "/dev/";
 					break;
 				}
 			}		
