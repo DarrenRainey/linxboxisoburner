@@ -8,7 +8,7 @@ namespace LinXbox360isoBurner
 	{
 		Conf config;
 		
-		public Preferences (ref Conf c) : base(Gtk.WindowType.Toplevel)
+		public Preferences (Conf c) : base(Gtk.WindowType.Toplevel)
 		{
 			this.Build ();
 			
@@ -49,7 +49,7 @@ namespace LinXbox360isoBurner
 		protected virtual void OnEntryLogfileparthChanged (object sender, System.EventArgs e)
 		{
 			if (entry_logfilepath.Text == "") button_ok.Sensitive = false;
-			else button_ok.Sensitive = true;
+			else {button_ok.Sensitive = true;config.logpath = entry_logfilepath.Text;}
 		}
 		
 		protected virtual void OnSpinbutton1ValueChanged (object sender, System.EventArgs e)

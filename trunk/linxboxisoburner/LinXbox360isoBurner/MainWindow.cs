@@ -118,11 +118,11 @@ public partial class MainWindow: Gtk.Window
 		process.ErrorDataReceived += new DataReceivedEventHandler(HandleErrorDataReceived); 
 		process.Exited += new EventHandler(HandleExited);
 
-//		process.StartInfo.Arguments = argstring;
-//		process.StartInfo.FileName = "growisofs";
+		process.StartInfo.Arguments = argstring;
+		process.StartInfo.FileName = "growisofs";
 		
-		process.StartInfo.Arguments ="mail.ru -c 10"; // test strings
-		process.StartInfo.FileName = "ping";			// test strings	
+//		process.StartInfo.Arguments ="mail.ru -c 10"; // test strings
+//		process.StartInfo.FileName = "ping";			// test strings	
 		
 		bool append = false;
 		FileInfo f = new FileInfo (config.logpath);
@@ -245,7 +245,7 @@ public partial class MainWindow: Gtk.Window
 	
 	protected virtual void OnPreferencesActionActivated (object sender, System.EventArgs e)
 	{
-		Preferences prefs = new Preferences(ref config);
+		Preferences prefs = new Preferences(config);
 		this.Sensitive = false;
 		prefs.Destroyed+= delegate(object send, EventArgs c) 
 							{
