@@ -9,7 +9,8 @@ namespace LinXbox360isoBurner
 		string configfile;
 		
 		public bool log;
-		public string logparth;
+		public int logsize;
+		public string logpath;
 		
 		public bool dvdrwremember;
 		public string dvdrw;
@@ -21,7 +22,8 @@ namespace LinXbox360isoBurner
 			configfile = user.HomeDirectory + "/.linxbox360burner/conf";
 			
 			log = false;
-			logparth =user.HomeDirectory + "/.linxbox360burner/log";
+			logpath =user.HomeDirectory + "/.linxbox360burner/log";
+			logsize = 1000;
 			
 			dvdrwremember = true;
 			dvdrw = "/dev/";
@@ -58,8 +60,12 @@ namespace LinXbox360isoBurner
 						else log = false;
 					break;
 					
-				case "logparth":
-					logparth = args[1];
+				case "logpath":
+					logpath =args[1];
+					break;
+					
+				case "logsize":
+					logsize = Convert.ToInt32(args[1]);
 					break;
 					
 				case "dvdrwremember":
@@ -81,7 +87,8 @@ namespace LinXbox360isoBurner
 		{
 			StreamWriter sw = new StreamWriter(configfile,false);
 			sw.WriteLine("log=" + log.ToString());
-			sw.WriteLine("logparth=" + logparth);
+			sw.WriteLine("logpath=" + logpath);
+			sw.WriteLine("logsize=" + logsize.ToString());
 			sw.WriteLine("dvdrwremember=" + dvdrwremember.ToString());
 			sw.WriteLine("dvdrw=" + dvdrw);
 			sw.Flush();

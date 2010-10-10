@@ -15,7 +15,8 @@ namespace LinXbox360isoBurner
 			config = c;
 			
 			checkbutton_log.Active = config.log;
-			entry_logfileparth.Text = config.logparth;
+			spinbutton_logsize.Text = config.logsize.ToString();
+			entry_logfilepath.Text = config.logpath;
 			checkbutton_remdvdrw.Active = config.dvdrwremember;			
 		}
 		
@@ -39,6 +40,26 @@ namespace LinXbox360isoBurner
 		{
 			this.Destroy();
 		}
+		
+		protected virtual void OnFilechooserbuttonLogSelectionChanged (object sender, System.EventArgs e)
+		{
+			entry_logfilepath.Text = System.IO.Path.Combine(filechooserbutton_log.CurrentFolder,"log");
+		}
+		
+		protected virtual void OnEntryLogfileparthChanged (object sender, System.EventArgs e)
+		{
+			if (entry_logfilepath.Text == "") button_ok.Sensitive = false;
+			else button_ok.Sensitive = true;
+		}
+		
+		protected virtual void OnSpinbutton1ValueChanged (object sender, System.EventArgs e)
+		{
+			config.logsize = Convert.ToInt32(spinbutton_logsize.Text);
+		}
+		
+		
+		
+		
 		
 		
 		

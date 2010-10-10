@@ -8,7 +8,7 @@
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
     <widget-library name="../bin/Release/LinXbox360isoBurner.exe" internal="true" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="396 325">
+  <widget class="Gtk.Window" id="MainWindow" design-size="396 328">
     <action-group name="Default">
       <action id="FileAction">
         <property name="Type">Action</property>
@@ -446,11 +446,12 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="LinXbox360isoBurner.FileError" design-size="201 117">
+  <widget class="Gtk.Window" id="LinXbox360isoBurner.FileError" design-size="201 130">
     <property name="MemberName" />
     <property name="Title" translatable="yes">FileError</property>
     <property name="Icon">resource:LinXbox360isoBurner.icon.png</property>
     <property name="WindowPosition">CenterAlways</property>
+    <property name="BorderWidth">20</property>
     <property name="Resizable">False</property>
     <property name="AllowGrow">False</property>
     <property name="Gravity">Static</property>
@@ -741,11 +742,12 @@ http://linxboxisoburner.googlecode.com/svn/trunk/linxboxisoburner</property>
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="LinXbox360isoBurner.Preferences" design-size="378 207">
+  <widget class="Gtk.Window" id="LinXbox360isoBurner.Preferences" design-size="421 246">
     <property name="MemberName" />
     <property name="Title" translatable="yes">Preferences</property>
     <property name="Icon">resource:LinXbox360isoBurner.icon.png</property>
     <property name="WindowPosition">Center</property>
+    <property name="BorderWidth">9</property>
     <property name="Resizable">False</property>
     <property name="AllowGrow">False</property>
     <property name="Gravity">Center</property>
@@ -781,13 +783,68 @@ http://linxboxisoburner.googlecode.com/svn/trunk/linxboxisoburner</property>
           </packing>
         </child>
         <child>
+          <widget class="Gtk.HBox" id="hbox3">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.Label" id="label1">
+                <property name="MemberName" />
+                <property name="LabelProp">Log file size</property>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+                <property name="Padding">15</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.SpinButton" id="spinbutton_logsize">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Upper">10000000</property>
+                <property name="PageIncrement">10</property>
+                <property name="StepIncrement">1</property>
+                <property name="ClimbRate">1</property>
+                <property name="Numeric">True</property>
+                <signal name="ValueChanged" handler="OnSpinbutton1ValueChanged" />
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Label" id="label3">
+                <property name="MemberName" />
+                <property name="LabelProp">Kb</property>
+              </widget>
+              <packing>
+                <property name="Position">2</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
           <widget class="Gtk.HBox" id="hbox1">
             <property name="MemberName" />
             <property name="Spacing">6</property>
             <child>
               <widget class="Gtk.Label" id="label2">
                 <property name="MemberName" />
-                <property name="LabelProp" translatable="yes">Log file parth:</property>
+                <property name="LabelProp" translatable="yes">Log file path:</property>
               </widget>
               <packing>
                 <property name="Position">0</property>
@@ -805,7 +862,7 @@ http://linxboxisoburner.googlecode.com/svn/trunk/linxboxisoburner</property>
             </child>
           </widget>
           <packing>
-            <property name="Position">1</property>
+            <property name="Position">2</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -816,11 +873,12 @@ http://linxboxisoburner.googlecode.com/svn/trunk/linxboxisoburner</property>
             <property name="MemberName" />
             <property name="Spacing">6</property>
             <child>
-              <widget class="Gtk.Entry" id="entry_logfileparth">
+              <widget class="Gtk.Entry" id="entry_logfilepath">
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="IsEditable">True</property>
                 <property name="InvisibleChar">●</property>
+                <signal name="Changed" handler="OnEntryLogfileparthChanged" />
               </widget>
               <packing>
                 <property name="Position">0</property>
@@ -829,14 +887,23 @@ http://linxboxisoburner.googlecode.com/svn/trunk/linxboxisoburner</property>
               </packing>
             </child>
             <child>
-              <placeholder />
+              <widget class="Gtk.FileChooserButton" id="filechooserbutton_log">
+                <property name="MemberName" />
+                <property name="Action">SelectFolder</property>
+                <property name="ShowHidden">True</property>
+                <signal name="SelectionChanged" handler="OnFilechooserbuttonLogSelectionChanged" />
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+              </packing>
             </child>
             <child>
               <placeholder />
             </child>
           </widget>
           <packing>
-            <property name="Position">2</property>
+            <property name="Position">3</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -863,7 +930,7 @@ http://linxboxisoburner.googlecode.com/svn/trunk/linxboxisoburner</property>
             </child>
           </widget>
           <packing>
-            <property name="Position">3</property>
+            <property name="Position">4</property>
             <property name="AutoSize">False</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>
@@ -905,7 +972,7 @@ http://linxboxisoburner.googlecode.com/svn/trunk/linxboxisoburner</property>
             </child>
           </widget>
           <packing>
-            <property name="Position">4</property>
+            <property name="Position">5</property>
             <property name="AutoSize">True</property>
             <property name="Expand">False</property>
             <property name="Fill">False</property>

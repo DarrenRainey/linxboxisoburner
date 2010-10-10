@@ -118,13 +118,20 @@ public partial class MainWindow: Gtk.Window
 		process.ErrorDataReceived += new DataReceivedEventHandler(HandleErrorDataReceived); 
 		process.Exited += new EventHandler(HandleExited);
 
-		process.StartInfo.Arguments = argstring;
-		process.StartInfo.FileName = "growisofs";
+//		process.StartInfo.Arguments = argstring;
+//		process.StartInfo.FileName = "growisofs";
 		
-//		process.StartInfo.Arguments ="mail.ru -c 10"; // test strings
-//		process.StartInfo.FileName = "ping";			// test strings	
+		process.StartInfo.Arguments ="mail.ru -c 10"; // test strings
+		process.StartInfo.FileName = "ping";			// test strings	
 		
-		logwriter = new StreamWriter(config.logparth, true);
+		bool append = false;
+		FileInfo f = new FileInfo (config.logpath);
+		if (f.Exists)
+		{
+			if (config.logsize > (f.Length/1000)) append = true;
+		}
+		
+		logwriter = new StreamWriter(config.logpath, append);
 		logstring = "============ <START> ============";
 		logstring = "Start burning " + DateTime.Now.ToString();
 			
