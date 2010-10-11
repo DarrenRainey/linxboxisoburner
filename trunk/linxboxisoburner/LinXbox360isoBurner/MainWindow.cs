@@ -123,7 +123,8 @@ public partial class MainWindow: Gtk.Window
 		
 //		process.StartInfo.Arguments ="mail.ru -c 10"; // test strings
 //		process.StartInfo.FileName = "ping";			// test strings	
-		
+
+//      Check logfile size		
 		bool append = false;
 		FileInfo f = new FileInfo (config.logpath);
 		if (f.Exists)
@@ -132,6 +133,7 @@ public partial class MainWindow: Gtk.Window
 		}
 		
 		logwriter = new StreamWriter(config.logpath, append);
+		logwriter.AutoFlush = true;
 		logstring = "============ <START> ============";
 		logstring = "Start burning " + DateTime.Now.ToString();
 			
@@ -140,7 +142,7 @@ public partial class MainWindow: Gtk.Window
 		process.BeginOutputReadLine();
 		process.BeginErrorReadLine();
 		
-		burning = new BurningWindow(ref process);
+		burning = new BurningWindow(process);
 		burning.Destroyed += delegate(object send, EventArgs c) {this.Visible = true;};
 		burning.ShowAll();
 		
@@ -184,7 +186,7 @@ public partial class MainWindow: Gtk.Window
 		logstring = "Burning stops " + DateTime.Now.ToString();
 		logstring = "============ <END> ============";
 		if (config.log) logwriter.WriteLine();
-		logwriter.Flush();
+//		logwriter.Flush();
 		logwriter.Dispose();
 		
 		burning.trayicon.Blinking = true;
