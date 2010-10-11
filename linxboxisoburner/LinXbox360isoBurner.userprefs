@@ -1,21 +1,20 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" ctype="Workspace" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ctype="Workspace" />
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ActiveDocument="LinXbox360isoBurner/Preferences.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LinXbox360isoBurner/MainWindow.cs" ctype="Workbench">
     <Files>
-      <File FileName="LinXbox360isoBurner/MainWindow.cs" Line="32" Column="1" />
-      <File FileName="LinXbox360isoBurner/Conf.cs" Line="75" Column="6" />
-      <File FileName="LinXbox360isoBurner/About.cs" Line="1" Column="1" />
-      <File FileName="LinXbox360isoBurner/Preferences.cs" Line="57" Column="1" />
-      <File FileName="LinXbox360isoBurner/FileError.cs" Line="1" Column="1" />
+      <File FileName="LinXbox360isoBurner/MainWindow.cs" Line="189" Column="3" />
+      <File FileName="LinXbox360isoBurner/Conf.cs" Line="107" Column="1" />
+      <File FileName="LinXbox360isoBurner/Preferences.cs" Line="13" Column="18" />
+      <File FileName="LinXbox360isoBurner/BurningWindow.cs" Line="32" Column="34" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="LinXbox360isoBurner" expanded="True">
-            <Node name="Preferences.cs" selected="True" />
+            <Node name="MainWindow.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -25,9 +24,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/home/requiem/Projects/linxboxisoburner/linxboxisoburner/LinXbox360isoBurner/MainWindow.cs" line="164" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches ctype="PinnedWatchStore" />
 </Properties>
