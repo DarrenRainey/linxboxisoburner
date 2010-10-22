@@ -185,8 +185,7 @@ public partial class MainWindow: Gtk.Window
 		
 		logstring = "Burning stops " + DateTime.Now.ToString();
 		logstring = "============ <END> ============";
-		if (config.log) logwriter.WriteLine();
-//		logwriter.Flush();
+		logstring = "";
 		logwriter.Dispose();
 		
 		burning.trayicon.Blinking = true;
