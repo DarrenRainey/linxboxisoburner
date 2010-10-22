@@ -7,7 +7,6 @@
     <Files>
       <File FileName="LinXbox360isoBurner/MainWindow.cs" Line="189" Column="3" />
       <File FileName="LinXbox360isoBurner/Conf.cs" Line="107" Column="1" />
-      <File FileName="LinXbox360isoBurner/Preferences.cs" Line="13" Column="18" />
       <File FileName="LinXbox360isoBurner/BurningWindow.cs" Line="32" Column="34" />
     </Files>
     <Pads>
