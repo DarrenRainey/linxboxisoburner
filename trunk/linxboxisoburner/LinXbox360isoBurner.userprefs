@@ -1,13 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ctype="Workspace" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" ctype="Workspace" />
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
   <MonoDevelop.Ide.Workbench ActiveDocument="LinXbox360isoBurner/MainWindow.cs" ctype="Workbench">
     <Files>
-      <File FileName="LinXbox360isoBurner/MainWindow.cs" Line="189" Column="3" />
+      <File FileName="LinXbox360isoBurner/MainWindow.cs" Line="113" Column="51" />
       <File FileName="LinXbox360isoBurner/Conf.cs" Line="107" Column="1" />
-      <File FileName="LinXbox360isoBurner/BurningWindow.cs" Line="32" Column="34" />
+      <File FileName="LinXbox360isoBurner/BurningWindow.cs" Line="34" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

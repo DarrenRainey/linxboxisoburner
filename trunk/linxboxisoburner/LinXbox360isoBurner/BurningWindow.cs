@@ -28,7 +28,7 @@ namespace LinXbox360isoBurner
 		}
 			
 			
-		public BurningWindow(Process proc) : 
+		public BurningWindow(ref Process proc) : 
 				base(Gtk.WindowType.Toplevel)
 		{
 			this.Build();
