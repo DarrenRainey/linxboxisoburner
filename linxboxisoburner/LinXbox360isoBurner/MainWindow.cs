@@ -142,7 +142,7 @@ public partial class MainWindow: Gtk.Window
 		process.BeginOutputReadLine();
 		process.BeginErrorReadLine();
 		
-		burning = new BurningWindow(process);
+		burning = new BurningWindow(ref process);
 		burning.Destroyed += delegate(object send, EventArgs c) {this.Visible = true;};
 		burning.ShowAll();
 		
