@@ -29,6 +29,8 @@ or run _start.sh_ script
 
 *4) Burning Xbox iso*
 
-- choose .dvd file and Dvd-rw recorder (something about _/dev/sr0 or /dev/dvdrw0_)
+- insert DVD+R DL disk in your dvd-rw recorder
+
+- choose .dvd file and dvd-rw recorder (something about _/dev/sr0 or /dev/dvdrw0_)
 
 - press "Burn" and wait until burning process is over
