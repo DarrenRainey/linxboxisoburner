@@ -17,11 +17,52 @@ namespace LinXbox360isoBurner
 		{
 			set 
 			{
-				label_status.Text = value;
+				statusbar.Pop(1);
+				statusbar.Push(1,value);
 				trayicon.Tooltip = value;
+				Status_string_paser(value);
 			}
 		}
+		
+		public void Status_string_paser(string arg)
+        {
+            string str = arg;
+//			str = 	"  236388352/7838695424 ( 3.0%) @2.4x, remaining 56:48 RBU 100.0% UBU  67.2%"; //test string		
 			
+			if (!str.Contains("RBU")) return;
+
+			str = str.Replace(".",",");
+            char[] separators = new char[] {' '};
+            string[] substrings = str.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+			int num = substrings.Length;
+			
+            string progress = substrings[num - 8];
+            progress = progress.Trim(')','(');
+			progressbar.Text = progress;
+			progress = progress.Remove(progress.Length-1,1);
+            double tmp = Convert.ToDouble(progress);
+            progressbar.Fraction = tmp/100;
+
+            string speed = substrings[num-7];
+            speed = speed.Trim('@',',');
+            label_speed.Text = speed;
+
+            string remtime = substrings[num-5];
+            label_time.Text = remtime;
+
+            string rbu = substrings[num-3];
+			progressbar_rbu.Text = rbu;
+            rbu = rbu.Remove(rbu.Length - 1, 1);
+            tmp = Convert.ToDouble(rbu);
+           	progressbar_rbu.Fraction = tmp/100;
+
+            string ubu = substrings[num -1];
+			progressbar_ubu.Text = ubu;
+            ubu = ubu.Remove(ubu.Length - 1, 1);
+            tmp = Convert.ToDouble(ubu);
+           	progressbar_ubu.Fraction = tmp/100;
+        }	
+		
 		public string Button_text
 		{
 			set {button_cancel.Label = value;}
@@ -42,6 +83,8 @@ namespace LinXbox360isoBurner
 			trayicon = new StatusIcon(Pixbuf.LoadFromResource("LinXbox360isoBurner.icon.png"));
 			trayicon.Visible = false;
 			trayicon.Activate += HandleActivate;
+			
+			statusbar.Push(1,"Burning...");
 		}
 
 		void HandleCancel(object sender, EventArgs e)

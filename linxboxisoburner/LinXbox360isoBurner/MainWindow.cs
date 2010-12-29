@@ -12,7 +12,6 @@ public partial class MainWindow: Gtk.Window
 	bool dryrun;
 	Process process;
 	BurningWindow burning;
-	string error;
 	Conf config;
 	StreamWriter logwriter;
 	
@@ -158,7 +157,8 @@ public partial class MainWindow: Gtk.Window
 	
 	protected	void HandleErrorDataReceived(object sender, DataReceivedEventArgs e)
 	{
-		error =  e.Data.ToString();
+		burning.Label_burn =  e.Data.ToString();
+		logstring = e.Data.ToString();
 	}
 	
 	protected void  HandleExited(object sender, EventArgs e)
@@ -176,8 +176,6 @@ public partial class MainWindow: Gtk.Window
 		if (process.ExitCode != 0)
 		{
 			burning.Title = "Error";
-			burning.Label_burn = error;
-			logstring = error;
 			SystemSounds.Hand.Play();
 		}
 
