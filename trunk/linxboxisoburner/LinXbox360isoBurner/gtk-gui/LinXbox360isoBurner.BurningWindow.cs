@@ -292,7 +292,6 @@ namespace LinXbox360isoBurner
 			this.DefaultHeight = 271;
 			this.Show ();
 			this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
-			this.SizeAllocated += new global::Gtk.SizeAllocatedHandler (this.OnSizeAllocated);
 			this.WindowStateEvent += new global::Gtk.WindowStateEventHandler (this.OnWindowStateEvent);
 		}
 	}

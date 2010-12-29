@@ -522,7 +522,6 @@
     <property name="Gravity">Center</property>
     <property name="SkipPagerHint">True</property>
     <signal name="DeleteEvent" handler="OnDeleteEvent" />
-    <signal name="SizeAllocated" handler="OnSizeAllocated" />
     <signal name="WindowStateEvent" handler="OnWindowStateEvent" />
     <child>
       <widget class="Gtk.VBox" id="vbox2">
