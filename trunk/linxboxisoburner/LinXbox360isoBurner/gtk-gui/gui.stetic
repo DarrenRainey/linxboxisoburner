@@ -511,7 +511,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Window" id="LinXbox360isoBurner.BurningWindow" design-size="211 124">
+  <widget class="Gtk.Window" id="LinXbox360isoBurner.BurningWindow" design-size="292 271">
     <property name="MemberName" />
     <property name="Title" translatable="yes">Burning...</property>
     <property name="Icon">resource:LinXbox360isoBurner.icon.png</property>
@@ -525,35 +525,290 @@
     <signal name="SizeAllocated" handler="OnSizeAllocated" />
     <signal name="WindowStateEvent" handler="OnWindowStateEvent" />
     <child>
-      <widget class="Gtk.Fixed" id="fixed_burn">
+      <widget class="Gtk.VBox" id="vbox2">
         <property name="MemberName" />
-        <property name="HasWindow">False</property>
+        <property name="Spacing">6</property>
         <child>
-          <widget class="Gtk.Label" id="label_status">
+          <widget class="Gtk.HBox" id="hbox6">
             <property name="MemberName" />
-            <property name="Xpad">96</property>
-            <property name="Ypad">5</property>
-            <property name="Xalign">1</property>
-            <property name="LabelProp" translatable="yes">...</property>
-            <property name="Justify">Center</property>
-            <property name="SingleLineMode">True</property>
+            <property name="Spacing">6</property>
+            <child>
+              <widget class="Gtk.VBox" id="vbox8">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.Fixed" id="fixed9">
+                    <property name="MemberName" />
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.Label" id="label212">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">Progress:</property>
+                      </widget>
+                      <packing>
+                        <property name="X">15</property>
+                        <property name="Y">10</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">False</property>
+                    <property name="Padding">5</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Fixed" id="fixed10">
+                    <property name="MemberName" />
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.Label" id="label213">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">Main Buffer:</property>
+                      </widget>
+                      <packing>
+                        <property name="X">15</property>
+                        <property name="Y">10</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">False</property>
+                    <property name="Padding">5</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Fixed" id="fixed11">
+                    <property name="MemberName" />
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.Label" id="label214">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">Secondary Buffer:</property>
+                      </widget>
+                      <packing>
+                        <property name="X">15</property>
+                        <property name="Y">4</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">2</property>
+                    <property name="AutoSize">False</property>
+                    <property name="Padding">5</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Fixed" id="fixed12">
+                    <property name="MemberName" />
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.Label" id="label215">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">Burning speed:</property>
+                      </widget>
+                      <packing>
+                        <property name="X">15</property>
+                        <property name="Y">7</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">3</property>
+                    <property name="AutoSize">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Fixed" id="fixed14">
+                    <property name="MemberName" />
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.Label" id="label217">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">Remaining time:</property>
+                      </widget>
+                      <packing>
+                        <property name="X">15</property>
+                        <property name="Y">3</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">4</property>
+                    <property name="AutoSize">False</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">0</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.VBox" id="vbox6">
+                <property name="MemberName" />
+                <property name="Spacing">6</property>
+                <child>
+                  <widget class="Gtk.Fixed" id="fixed2">
+                    <property name="MemberName" />
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.ProgressBar" id="progressbar">
+                        <property name="MemberName" />
+                        <property name="Text" translatable="yes">0%</property>
+                      </widget>
+                      <packing>
+                        <property name="Y">5</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">0</property>
+                    <property name="AutoSize">False</property>
+                    <property name="Padding">5</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Fixed" id="fixed3">
+                    <property name="MemberName" />
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.ProgressBar" id="progressbar_ubu">
+                        <property name="MemberName" />
+                        <property name="Text" translatable="yes">0%</property>
+                      </widget>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">1</property>
+                    <property name="AutoSize">False</property>
+                    <property name="Expand">False</property>
+                    <property name="Fill">False</property>
+                    <property name="Padding">5</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Fixed" id="fixed8">
+                    <property name="MemberName" />
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.ProgressBar" id="progressbar_rbu">
+                        <property name="MemberName" />
+                        <property name="Text" translatable="yes">0%</property>
+                      </widget>
+                      <packing>
+                        <property name="Y">-3</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">2</property>
+                    <property name="AutoSize">False</property>
+                    <property name="Padding">5</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Fixed" id="fixed13">
+                    <property name="MemberName" />
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.Label" id="label_speed">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">0x</property>
+                        <property name="Justify">Center</property>
+                      </widget>
+                      <packing>
+                        <property name="X">63</property>
+                        <property name="Y">3</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">3</property>
+                    <property name="AutoSize">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <widget class="Gtk.Fixed" id="fixed15">
+                    <property name="MemberName" />
+                    <property name="HasWindow">False</property>
+                    <child>
+                      <widget class="Gtk.Label" id="label_time">
+                        <property name="MemberName" />
+                        <property name="LabelProp" translatable="yes">00:00</property>
+                        <property name="Justify">Center</property>
+                      </widget>
+                      <packing>
+                        <property name="X">55</property>
+                        <property name="Y">3</property>
+                      </packing>
+                    </child>
+                  </widget>
+                  <packing>
+                    <property name="Position">4</property>
+                    <property name="AutoSize">False</property>
+                  </packing>
+                </child>
+              </widget>
+              <packing>
+                <property name="Position">1</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
           </widget>
           <packing>
-            <property name="X">1</property>
-            <property name="Y">19</property>
+            <property name="Position">0</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
           </packing>
         </child>
         <child>
-          <widget class="Gtk.Button" id="button_cancel">
+          <widget class="Gtk.HButtonBox" id="hbuttonbox2">
             <property name="MemberName" />
-            <property name="CanFocus">True</property>
-            <property name="Type">TextOnly</property>
-            <property name="Label" translatable="yes">Cancel</property>
-            <property name="UseUnderline">True</property>
+            <property name="Size">1</property>
+            <child>
+              <widget class="Gtk.Button" id="button_cancel">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="Type">TextOnly</property>
+                <property name="Label" translatable="yes">Cancel</property>
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
           </widget>
           <packing>
-            <property name="X">75</property>
-            <property name="Y">53</property>
+            <property name="Position">1</property>
+            <property name="AutoSize">True</property>
+            <property name="Expand">False</property>
+            <property name="Fill">False</property>
+          </packing>
+        </child>
+        <child>
+          <widget class="Gtk.Statusbar" id="statusbar">
+            <property name="MemberName" />
+            <property name="Spacing">6</property>
+            <property name="HasResizeGrip">False</property>
+            <child>
+              <placeholder />
+            </child>
+            <child>
+              <placeholder />
+            </child>
+          </widget>
+          <packing>
+            <property name="Position">2</property>
+            <property name="AutoSize">False</property>
+            <property name="Expand">False</property>
           </packing>
         </child>
       </widget>
@@ -665,7 +920,7 @@
                 <child>
                   <widget class="Gtk.Label" id="label2">
                     <property name="MemberName" />
-                    <property name="LabelProp">LinXbox360isoBurner ver. 0.3.x</property>
+                    <property name="LabelProp">LinXbox360isoBurner ver. 0.4.x</property>
                     <property name="Justify">Center</property>
                   </widget>
                   <packing>
