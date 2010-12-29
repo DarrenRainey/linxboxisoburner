@@ -108,16 +108,6 @@ namespace LinXbox360isoBurner
 			buttonend = true;
 		}
 
-		// Keeps "Cancel" button centered
-		protected virtual void OnSizeAllocated (object o, Gtk.SizeAllocatedArgs args)
-		{
-			int width = this.Allocation.Width;
-			int butwidth = button_cancel.Allocation.Width;
-			int x = width/2 - butwidth/2;
-			Gdk.Rectangle retangle = new Gdk.Rectangle(x, button_cancel.Allocation.Y , butwidth, button_cancel.Allocation.Height);
-			button_cancel.Allocation = retangle;
-		}
-
 		// Minimizes this window into system tray
 		protected virtual void OnWindowStateEvent (object o, Gtk.WindowStateEventArgs args)
 		{
