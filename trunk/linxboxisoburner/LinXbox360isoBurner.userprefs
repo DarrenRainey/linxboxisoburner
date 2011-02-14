@@ -3,16 +3,16 @@
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ActiveDocument="LinXbox360isoBurner/BurningWindow.cs" ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LinXbox360isoBurner/MainWindow.cs" ctype="Workbench">
     <Files>
-      <File FileName="LinXbox360isoBurner/BurningWindow.cs" Line="28" Column="10" />
-      <File FileName="LinXbox360isoBurner/MainWindow.cs" Line="194" Column="25" />
+      <File FileName="LinXbox360isoBurner/BurningWindow.cs" Line="30" Column="3" />
+      <File FileName="LinXbox360isoBurner/MainWindow.cs" Line="137" Column="46" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="LinXbox360isoBurner" expanded="True">
-            <Node name="BurningWindow.cs" selected="True" />
+            <Node name="MainWindow.cs" selected="True" />
           </Node>
         </State>
       </Pad>

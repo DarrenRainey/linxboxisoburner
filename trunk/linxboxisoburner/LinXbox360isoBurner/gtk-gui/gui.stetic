@@ -675,7 +675,7 @@
                     <property name="MemberName" />
                     <property name="HasWindow">False</property>
                     <child>
-                      <widget class="Gtk.ProgressBar" id="progressbar_ubu">
+                      <widget class="Gtk.ProgressBar" id="progressbar_rbu">
                         <property name="MemberName" />
                         <property name="Text" translatable="yes">0%</property>
                       </widget>
@@ -694,7 +694,7 @@
                     <property name="MemberName" />
                     <property name="HasWindow">False</property>
                     <child>
-                      <widget class="Gtk.ProgressBar" id="progressbar_rbu">
+                      <widget class="Gtk.ProgressBar" id="progressbar_ubu">
                         <property name="MemberName" />
                         <property name="Text" translatable="yes">0%</property>
                       </widget>
