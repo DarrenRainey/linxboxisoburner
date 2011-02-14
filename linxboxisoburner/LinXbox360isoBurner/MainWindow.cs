@@ -136,16 +136,16 @@ public partial class MainWindow: Gtk.Window
 		logstring = "============ <START> ============";
 		logstring = "Start burning " + DateTime.Now.ToString();
 			
-		process.Start();
-		
-		process.BeginOutputReadLine();
-		process.BeginErrorReadLine();
 		
 		burning = new BurningWindow(ref process);
 		burning.Destroyed += delegate(object send, EventArgs c) {this.Visible = true;};
-		burning.ShowAll();
+		
+		process.Start();
+		process.BeginOutputReadLine();
+		process.BeginErrorReadLine();
 		
 		this.Visible = false;
+		burning.ShowAll();
 	}
 	
 	// Next three methods are process event handlers

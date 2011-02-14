@@ -38,11 +38,11 @@ namespace LinXbox360isoBurner
 
 		private global::Gtk.Fixed fixed3;
 
-		private global::Gtk.ProgressBar progressbar_ubu;
+		private global::Gtk.ProgressBar progressbar_rbu;
 
 		private global::Gtk.Fixed fixed8;
 
-		private global::Gtk.ProgressBar progressbar_rbu;
+		private global::Gtk.ProgressBar progressbar_ubu;
 
 		private global::Gtk.Fixed fixed13;
 
@@ -190,10 +190,10 @@ namespace LinXbox360isoBurner
 			this.fixed3.Name = "fixed3";
 			this.fixed3.HasWindow = false;
 			// Container child fixed3.Gtk.Fixed+FixedChild
-			this.progressbar_ubu = new global::Gtk.ProgressBar ();
-			this.progressbar_ubu.Name = "progressbar_ubu";
-			this.progressbar_ubu.Text = "0%";
-			this.fixed3.Add (this.progressbar_ubu);
+			this.progressbar_rbu = new global::Gtk.ProgressBar ();
+			this.progressbar_rbu.Name = "progressbar_rbu";
+			this.progressbar_rbu.Text = "0%";
+			this.fixed3.Add (this.progressbar_rbu);
 			this.vbox6.Add (this.fixed3);
 			global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.fixed3]));
 			w15.Position = 1;
@@ -205,11 +205,11 @@ namespace LinXbox360isoBurner
 			this.fixed8.Name = "fixed8";
 			this.fixed8.HasWindow = false;
 			// Container child fixed8.Gtk.Fixed+FixedChild
-			this.progressbar_rbu = new global::Gtk.ProgressBar ();
-			this.progressbar_rbu.Name = "progressbar_rbu";
-			this.progressbar_rbu.Text = "0%";
-			this.fixed8.Add (this.progressbar_rbu);
-			global::Gtk.Fixed.FixedChild w16 = ((global::Gtk.Fixed.FixedChild)(this.fixed8[this.progressbar_rbu]));
+			this.progressbar_ubu = new global::Gtk.ProgressBar ();
+			this.progressbar_ubu.Name = "progressbar_ubu";
+			this.progressbar_ubu.Text = "0%";
+			this.fixed8.Add (this.progressbar_ubu);
+			global::Gtk.Fixed.FixedChild w16 = ((global::Gtk.Fixed.FixedChild)(this.fixed8[this.progressbar_ubu]));
 			w16.Y = -3;
 			this.vbox6.Add (this.fixed8);
 			global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.fixed8]));

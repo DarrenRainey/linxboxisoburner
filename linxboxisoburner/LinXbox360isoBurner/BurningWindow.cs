@@ -27,7 +27,7 @@ namespace LinXbox360isoBurner
 		public void Status_string_paser(string arg)
         {
             string str = arg;
-//			str = 	"  236388352/7838695424 ( 3.0%) @2.4x, remaining 56:48 RBU 100.0% UBU  67.2%"; //test string		
+//			str = 	"           0/7838695424 ( 1.0%) @2.0x, remaining ??:?? RBU 100.0% UBU   25.0%"; //test string		
 			
 			if (!str.Contains("RBU")) return;
 
