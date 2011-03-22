@@ -11,7 +11,6 @@ namespace LinXbox360isoBurner
 	{
 		private Process burnproc;
 		private bool buttonend;
-		private int count;
 		public StatusIcon trayicon;
 		
 		public string Label_burn
@@ -22,21 +21,15 @@ namespace LinXbox360isoBurner
 				statusbar.Push(1,value);
 				trayicon.Tooltip = value;
 				
-				if ((count == 10) && (value.Contains("RBU"))) 
-				{
-					Status_string_paser(value);
-					count = 0;
-				}
-				else count++;
+				if (value.Contains("RBU")) Status_string_paser(value);
 			}
 		}
 		
 		public void Status_string_paser(string arg)
         {
             string str = arg;
-//			str = 	"           0/7838695424 ( 1.0%) @2.0x, remaining ??:?? RBU 100.0% UBU   25.0%"; //test string		
 			
-//			if (!str.Contains("RBU")) return;
+//			str = 	"           0/7838695424 ( 1.0%) @2.0x, remaining ??:?? RBU 100.0% UBU   25.0%"; //test string		
 
 			str = str.Replace(".",",");
             char[] separators = new char[] {' '};
@@ -92,7 +85,6 @@ namespace LinXbox360isoBurner
 			trayicon.Activate += HandleActivate;
 			
 			statusbar.Push(1,"Burning...");
-			count = 0;
 		}
 
 		void HandleCancel(object sender, EventArgs e)
