@@ -54,13 +54,17 @@ namespace LinXbox360isoBurner
 			progressbar_rbu.Text = rbu;
             rbu = rbu.Remove(rbu.Length - 1, 1);
             tmp = Convert.ToDouble(rbu);
-           	progressbar_rbu.Fraction = tmp/100;
+			tmp = tmp/100;
+			if (tmp > 1) tmp = 1;
+           	progressbar_rbu.Fraction = tmp;
 
             string ubu = substrings[num -1];
 			progressbar_ubu.Text = ubu;
             ubu = ubu.Remove(ubu.Length - 1, 1);
             tmp = Convert.ToDouble(ubu);
-           	progressbar_ubu.Fraction = tmp/100;
+			tmp = tmp/100;
+			if (tmp > 1) tmp = 1;
+           	progressbar_ubu.Fraction = tmp;
         }	
 		
 		public string Button_text
