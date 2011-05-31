@@ -41,7 +41,9 @@ namespace LinXbox360isoBurner
 			progressbar.Text = progress;
 			progress = progress.Remove(progress.Length-1,1);
             double tmp = Convert.ToDouble(progress);
-            progressbar.Fraction = tmp/100;
+			tmp = tmp/100;
+			if (tmp > 1) tmp = 1;
+            progressbar.Fraction = tmp;
 
             string speed = substrings[num-7];
             speed = speed.Trim('@',',');
