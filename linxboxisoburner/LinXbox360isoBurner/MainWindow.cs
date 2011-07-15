@@ -220,19 +220,21 @@ public partial class MainWindow: Gtk.Window
 
 	protected virtual void OnButtonAutodvdrwClicked (object sender, System.EventArgs e)
 	{
-		string [] dev = Directory.GetFiles("/dev");
 		System.Collections.ArrayList dvdrwlist = new System.Collections.ArrayList();
 		
-		foreach (string d in dev)
+		Gnome.Vfs.Vfs.Initialize();
+		Gnome.Vfs.VolumeMonitor vMonitor = Gnome.Vfs.VolumeMonitor.Get();
+		Gnome.Vfs.Drive [] drives = vMonitor.ConnectedDrives;
+		
+		foreach (Gnome.Vfs.Drive d in drives) 
 		{
-			if (d.Contains("dvdrw")) dvdrwlist.Add(d);
+			if (d.DeviceType==Gnome.Vfs.DeviceType.Cdrom) dvdrwlist.Add(d.DevicePath);
 		}
+		Gnome.Vfs.Vfs.Shutdown();
 		
 		Dvdrwchoose dialog = new Dvdrwchoose(dvdrwlist);
-
 		dialog.Destroyed += delegate {if (dialog.dvdrw != null) entry_dvd.Text = dialog.dvdrw;
 										else entry_dvd.Text = "/dev/";};
-		
 		dialog.Visible = true;
 	}
 

@@ -49,8 +49,12 @@
     </Reference>
     <Reference Include="glade-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
+      <Package>glade-sharp-2.0</Package>
     </Reference>
     <Reference Include="gdk-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+    </Reference>
+    <Reference Include="gnome-vfs-sharp, Version=2.10.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gnome-vfs-sharp-2.0</Package>
     </Reference>
   </ItemGroup>
   <ItemGroup>
