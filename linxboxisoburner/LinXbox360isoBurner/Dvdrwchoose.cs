@@ -17,10 +17,10 @@ namespace LinXbox360isoBurner
 		this.Build();
 			
 		dvdrwlist = new List<string>();
-			
-		Vfs.Initialize();
-		VolumeMonitor vMonitor = VolumeMonitor.Get();
-		Drive [] drives = vMonitor.ConnectedDrives;
+		
+		Vfs.Initialize();	
+		VolumeMonitor vm = VolumeMonitor.Get();
+		Drive [] drives = vm.ConnectedDrives;
 		
 		foreach (Drive d in drives) 
 		{
@@ -30,7 +30,6 @@ namespace LinXbox360isoBurner
 					combobox.AppendText(d.DisplayName + " (" + d.DevicePath +")");
 				}
 		}
-		Vfs.Shutdown();
 		
 		combobox.Active = 0;
 		}
