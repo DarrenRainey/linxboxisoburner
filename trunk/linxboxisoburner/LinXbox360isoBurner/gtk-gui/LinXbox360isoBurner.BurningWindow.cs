@@ -5,59 +5,33 @@ namespace LinXbox360isoBurner
 	public partial class BurningWindow
 	{
 		private global::Gtk.VBox vbox2;
-
 		private global::Gtk.HBox hbox6;
-
 		private global::Gtk.VBox vbox8;
-
 		private global::Gtk.Fixed fixed9;
-
 		private global::Gtk.Label label212;
-
 		private global::Gtk.Fixed fixed10;
-
 		private global::Gtk.Label label213;
-
 		private global::Gtk.Fixed fixed11;
-
 		private global::Gtk.Label label214;
-
 		private global::Gtk.Fixed fixed12;
-
 		private global::Gtk.Label label215;
-
 		private global::Gtk.Fixed fixed14;
-
 		private global::Gtk.Label label217;
-
 		private global::Gtk.VBox vbox6;
-
 		private global::Gtk.Fixed fixed2;
-
 		private global::Gtk.ProgressBar progressbar;
-
 		private global::Gtk.Fixed fixed3;
-
 		private global::Gtk.ProgressBar progressbar_rbu;
-
 		private global::Gtk.Fixed fixed8;
-
 		private global::Gtk.ProgressBar progressbar_ubu;
-
 		private global::Gtk.Fixed fixed13;
-
 		private global::Gtk.Label label_speed;
-
 		private global::Gtk.Fixed fixed15;
-
 		private global::Gtk.Label label_time;
-
 		private global::Gtk.HButtonBox hbuttonbox2;
-
 		private global::Gtk.Button button_cancel;
-
 		private global::Gtk.Statusbar statusbar;
-
+        
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -92,11 +66,11 @@ namespace LinXbox360isoBurner
 			this.label212.Name = "label212";
 			this.label212.LabelProp = "Progress:";
 			this.fixed9.Add (this.label212);
-			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed9[this.label212]));
+			global::Gtk.Fixed.FixedChild w1 = ((global::Gtk.Fixed.FixedChild)(this.fixed9 [this.label212]));
 			w1.X = 15;
 			w1.Y = 10;
 			this.vbox8.Add (this.fixed9);
-			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox8[this.fixed9]));
+			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox8 [this.fixed9]));
 			w2.Position = 0;
 			w2.Padding = ((uint)(5));
 			// Container child vbox8.Gtk.Box+BoxChild
@@ -108,11 +82,11 @@ namespace LinXbox360isoBurner
 			this.label213.Name = "label213";
 			this.label213.LabelProp = "Main Buffer:";
 			this.fixed10.Add (this.label213);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed10[this.label213]));
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.fixed10 [this.label213]));
 			w3.X = 15;
 			w3.Y = 10;
 			this.vbox8.Add (this.fixed10);
-			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox8[this.fixed10]));
+			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox8 [this.fixed10]));
 			w4.Position = 1;
 			w4.Padding = ((uint)(5));
 			// Container child vbox8.Gtk.Box+BoxChild
@@ -124,11 +98,11 @@ namespace LinXbox360isoBurner
 			this.label214.Name = "label214";
 			this.label214.LabelProp = "Secondary Buffer:";
 			this.fixed11.Add (this.label214);
-			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed11[this.label214]));
+			global::Gtk.Fixed.FixedChild w5 = ((global::Gtk.Fixed.FixedChild)(this.fixed11 [this.label214]));
 			w5.X = 15;
 			w5.Y = 4;
 			this.vbox8.Add (this.fixed11);
-			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox8[this.fixed11]));
+			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox8 [this.fixed11]));
 			w6.Position = 2;
 			w6.Padding = ((uint)(5));
 			// Container child vbox8.Gtk.Box+BoxChild
@@ -140,11 +114,11 @@ namespace LinXbox360isoBurner
 			this.label215.Name = "label215";
 			this.label215.LabelProp = "Burning speed:";
 			this.fixed12.Add (this.label215);
-			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed12[this.label215]));
+			global::Gtk.Fixed.FixedChild w7 = ((global::Gtk.Fixed.FixedChild)(this.fixed12 [this.label215]));
 			w7.X = 15;
 			w7.Y = 7;
 			this.vbox8.Add (this.fixed12);
-			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox8[this.fixed12]));
+			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox8 [this.fixed12]));
 			w8.Position = 3;
 			// Container child vbox8.Gtk.Box+BoxChild
 			this.fixed14 = new global::Gtk.Fixed ();
@@ -155,14 +129,14 @@ namespace LinXbox360isoBurner
 			this.label217.Name = "label217";
 			this.label217.LabelProp = "Remaining time:";
 			this.fixed14.Add (this.label217);
-			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed14[this.label217]));
+			global::Gtk.Fixed.FixedChild w9 = ((global::Gtk.Fixed.FixedChild)(this.fixed14 [this.label217]));
 			w9.X = 15;
 			w9.Y = 3;
 			this.vbox8.Add (this.fixed14);
-			global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.vbox8[this.fixed14]));
+			global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.vbox8 [this.fixed14]));
 			w10.Position = 4;
 			this.hbox6.Add (this.vbox8);
-			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.hbox6[this.vbox8]));
+			global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.vbox8]));
 			w11.Position = 0;
 			w11.Expand = false;
 			w11.Fill = false;
@@ -179,10 +153,10 @@ namespace LinXbox360isoBurner
 			this.progressbar.Name = "progressbar";
 			this.progressbar.Text = "0%";
 			this.fixed2.Add (this.progressbar);
-			global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed2[this.progressbar]));
+			global::Gtk.Fixed.FixedChild w12 = ((global::Gtk.Fixed.FixedChild)(this.fixed2 [this.progressbar]));
 			w12.Y = 5;
 			this.vbox6.Add (this.fixed2);
-			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.fixed2]));
+			global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.vbox6 [this.fixed2]));
 			w13.Position = 0;
 			w13.Padding = ((uint)(5));
 			// Container child vbox6.Gtk.Box+BoxChild
@@ -195,7 +169,7 @@ namespace LinXbox360isoBurner
 			this.progressbar_rbu.Text = "0%";
 			this.fixed3.Add (this.progressbar_rbu);
 			this.vbox6.Add (this.fixed3);
-			global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.fixed3]));
+			global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.vbox6 [this.fixed3]));
 			w15.Position = 1;
 			w15.Expand = false;
 			w15.Fill = false;
@@ -209,10 +183,10 @@ namespace LinXbox360isoBurner
 			this.progressbar_ubu.Name = "progressbar_ubu";
 			this.progressbar_ubu.Text = "0%";
 			this.fixed8.Add (this.progressbar_ubu);
-			global::Gtk.Fixed.FixedChild w16 = ((global::Gtk.Fixed.FixedChild)(this.fixed8[this.progressbar_ubu]));
+			global::Gtk.Fixed.FixedChild w16 = ((global::Gtk.Fixed.FixedChild)(this.fixed8 [this.progressbar_ubu]));
 			w16.Y = -3;
 			this.vbox6.Add (this.fixed8);
-			global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.fixed8]));
+			global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.vbox6 [this.fixed8]));
 			w17.Position = 2;
 			w17.Padding = ((uint)(5));
 			// Container child vbox6.Gtk.Box+BoxChild
@@ -225,11 +199,11 @@ namespace LinXbox360isoBurner
 			this.label_speed.LabelProp = "0x";
 			this.label_speed.Justify = ((global::Gtk.Justification)(2));
 			this.fixed13.Add (this.label_speed);
-			global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.fixed13[this.label_speed]));
+			global::Gtk.Fixed.FixedChild w18 = ((global::Gtk.Fixed.FixedChild)(this.fixed13 [this.label_speed]));
 			w18.X = 63;
 			w18.Y = 3;
 			this.vbox6.Add (this.fixed13);
-			global::Gtk.Box.BoxChild w19 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.fixed13]));
+			global::Gtk.Box.BoxChild w19 = ((global::Gtk.Box.BoxChild)(this.vbox6 [this.fixed13]));
 			w19.Position = 3;
 			// Container child vbox6.Gtk.Box+BoxChild
 			this.fixed15 = new global::Gtk.Fixed ();
@@ -241,19 +215,19 @@ namespace LinXbox360isoBurner
 			this.label_time.LabelProp = "00:00";
 			this.label_time.Justify = ((global::Gtk.Justification)(2));
 			this.fixed15.Add (this.label_time);
-			global::Gtk.Fixed.FixedChild w20 = ((global::Gtk.Fixed.FixedChild)(this.fixed15[this.label_time]));
+			global::Gtk.Fixed.FixedChild w20 = ((global::Gtk.Fixed.FixedChild)(this.fixed15 [this.label_time]));
 			w20.X = 55;
 			w20.Y = 3;
 			this.vbox6.Add (this.fixed15);
-			global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.fixed15]));
+			global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.vbox6 [this.fixed15]));
 			w21.Position = 4;
 			this.hbox6.Add (this.vbox6);
-			global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.hbox6[this.vbox6]));
+			global::Gtk.Box.BoxChild w22 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.vbox6]));
 			w22.Position = 1;
 			w22.Expand = false;
 			w22.Fill = false;
 			this.vbox2.Add (this.hbox6);
-			global::Gtk.Box.BoxChild w23 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbox6]));
+			global::Gtk.Box.BoxChild w23 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbox6]));
 			w23.Position = 0;
 			w23.Expand = false;
 			w23.Fill = false;
@@ -267,11 +241,11 @@ namespace LinXbox360isoBurner
 			this.button_cancel.UseUnderline = true;
 			this.button_cancel.Label = "Cancel";
 			this.hbuttonbox2.Add (this.button_cancel);
-			global::Gtk.ButtonBox.ButtonBoxChild w24 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2[this.button_cancel]));
+			global::Gtk.ButtonBox.ButtonBoxChild w24 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2 [this.button_cancel]));
 			w24.Expand = false;
 			w24.Fill = false;
 			this.vbox2.Add (this.hbuttonbox2);
-			global::Gtk.Box.BoxChild w25 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.hbuttonbox2]));
+			global::Gtk.Box.BoxChild w25 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.hbuttonbox2]));
 			w25.Position = 1;
 			w25.Expand = false;
 			w25.Fill = false;
@@ -281,7 +255,7 @@ namespace LinXbox360isoBurner
 			this.statusbar.Spacing = 6;
 			this.statusbar.HasResizeGrip = false;
 			this.vbox2.Add (this.statusbar);
-			global::Gtk.Box.BoxChild w26 = ((global::Gtk.Box.BoxChild)(this.vbox2[this.statusbar]));
+			global::Gtk.Box.BoxChild w26 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.statusbar]));
 			w26.Position = 2;
 			w26.Expand = false;
 			this.Add (this.vbox2);

@@ -5,13 +5,10 @@ namespace LinXbox360isoBurner
 	public partial class Dvdrwchoose
 	{
 		private global::Gtk.Fixed @fixed;
-
 		private global::Gtk.Label label;
-
 		private global::Gtk.ComboBox combobox;
-
 		private global::Gtk.Button button_ok;
-
+        
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -34,18 +31,18 @@ namespace LinXbox360isoBurner
 			this.label.Name = "label";
 			this.label.LabelProp = "Choose your dvdrw device:";
 			this.@fixed.Add (this.label);
-			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.@fixed[this.label]));
+			global::Gtk.Fixed.FixedChild w2 = ((global::Gtk.Fixed.FixedChild)(this.@fixed [this.label]));
 			w2.X = 15;
 			w2.Y = 9;
 			// Container child fixed.Gtk.Fixed+FixedChild
 			this.combobox = global::Gtk.ComboBox.NewText ();
 			this.combobox.Name = "combobox";
 			this.@fixed.Add (this.combobox);
-			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.@fixed[this.combobox]));
+			global::Gtk.Fixed.FixedChild w3 = ((global::Gtk.Fixed.FixedChild)(this.@fixed [this.combobox]));
 			w3.X = 15;
 			w3.Y = 31;
 			w1.Add (this.@fixed);
-			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(w1[this.@fixed]));
+			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(w1 [this.@fixed]));
 			w4.Position = 0;
 			// Internal child LinXbox360isoBurner.Dvdrwchoose.ActionArea
 			global::Gtk.HButtonBox w5 = this.ActionArea;
@@ -61,7 +58,7 @@ namespace LinXbox360isoBurner
 			this.button_ok.UseUnderline = true;
 			this.button_ok.Label = "OK";
 			this.AddActionWidget (this.button_ok, -6);
-			global::Gtk.ButtonBox.ButtonBoxChild w6 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w5[this.button_ok]));
+			global::Gtk.ButtonBox.ButtonBoxChild w6 = ((global::Gtk.ButtonBox.ButtonBoxChild)(w5 [this.button_ok]));
 			w6.Expand = false;
 			w6.Fill = false;
 			if ((this.Child != null)) {

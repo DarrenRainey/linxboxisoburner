@@ -4,87 +4,47 @@
 public partial class MainWindow
 {
 	private global::Gtk.UIManager UIManager;
-
 	private global::Gtk.Action FileAction;
-
 	private global::Gtk.Action HelpAction;
-
 	private global::Gtk.Action cdromAction;
-
 	private global::Gtk.Action ExitAction;
-
 	private global::Gtk.Action AboutAction;
-
 	private global::Gtk.Action BurnAction;
-
 	private global::Gtk.Action propertiesAction;
-
 	private global::Gtk.ToggleAction PreferencesAction;
-
 	private global::Gtk.Action PreferencesAction1;
-
 	private global::Gtk.Action ExitAction1;
-
 	private global::Gtk.Action FileAction1;
-
 	private global::Gtk.Action HelpAction1;
-
 	private global::Gtk.Action cdromAction1;
-
 	private global::Gtk.Action preferencesAction;
-
 	private global::Gtk.Action stopAction;
-
 	private global::Gtk.Action AboutAction1;
-
 	private global::Gtk.VBox vbox;
-
 	private global::Gtk.MenuBar menubar;
-
 	private global::Gtk.HBox hbox1;
-
 	private global::Gtk.HBox hbox6;
-
 	private global::Gtk.Label label4;
-
 	private global::Gtk.HBox hbox2;
-
 	private global::Gtk.Entry entry;
-
 	private global::Gtk.Fixed fixed2;
-
 	private global::Gtk.FileChooserButton filechooserbutton;
-
 	private global::Gtk.HBox hbox7;
-
 	private global::Gtk.Label label5;
-
 	private global::Gtk.HBox hbox3;
-
 	private global::Gtk.Entry entry_dvd;
-
 	private global::Gtk.Fixed fixed3;
-
 	private global::Gtk.HButtonBox hbuttonbox3;
-
 	private global::Gtk.Button button9;
-
 	private global::Gtk.Fixed fixed4;
-
 	private global::Gtk.CheckButton checkbutton_dryrun;
-
 	private global::Gtk.HBox hbox5;
-
 	private global::Gtk.Label label3;
-
 	private global::Gtk.ComboBox combobox_speed;
-
 	private global::Gtk.HButtonBox hbuttonbox;
-
 	private global::Gtk.Button button_ok;
-
 	private global::Gtk.Button button_exit;
-
+    
 	protected virtual void Build ()
 	{
 		global::Stetic.Gui.Initialize (this);
@@ -158,7 +118,7 @@ public partial class MainWindow
 		this.menubar = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar")));
 		this.menubar.Name = "menubar";
 		this.vbox.Add (this.menubar);
-		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox[this.menubar]));
+		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox [this.menubar]));
 		w2.Position = 0;
 		w2.Expand = false;
 		w2.Fill = false;
@@ -175,16 +135,16 @@ public partial class MainWindow
 		this.label4.Name = "label4";
 		this.label4.LabelProp = ".dvd file:";
 		this.hbox6.Add (this.label4);
-		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox6[this.label4]));
+		global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.hbox6 [this.label4]));
 		w3.Position = 0;
 		w3.Expand = false;
 		w3.Fill = false;
 		w3.Padding = ((uint)(15));
 		this.hbox1.Add (this.hbox6);
-		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1[this.hbox6]));
+		global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.hbox6]));
 		w4.Position = 0;
 		this.vbox.Add (this.hbox1);
-		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox[this.hbox1]));
+		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox [this.hbox1]));
 		w5.Position = 1;
 		w5.Expand = false;
 		w5.Fill = false;
@@ -199,7 +159,7 @@ public partial class MainWindow
 		this.entry.IsEditable = true;
 		this.entry.InvisibleChar = '●';
 		this.hbox2.Add (this.entry);
-		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox2[this.entry]));
+		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.entry]));
 		w6.Position = 0;
 		w6.Expand = false;
 		w6.Padding = ((uint)(15));
@@ -208,19 +168,19 @@ public partial class MainWindow
 		this.fixed2.Name = "fixed2";
 		this.fixed2.HasWindow = false;
 		this.hbox2.Add (this.fixed2);
-		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox2[this.fixed2]));
+		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.fixed2]));
 		w7.Position = 1;
 		// Container child hbox2.Gtk.Box+BoxChild
 		this.filechooserbutton = new global::Gtk.FileChooserButton ("Выберите файл", ((global::Gtk.FileChooserAction)(0)));
 		this.filechooserbutton.Name = "filechooserbutton";
 		this.hbox2.Add (this.filechooserbutton);
-		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hbox2[this.filechooserbutton]));
+		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.filechooserbutton]));
 		w8.PackType = ((global::Gtk.PackType)(1));
 		w8.Position = 2;
 		w8.Expand = false;
 		w8.Padding = ((uint)(15));
 		this.vbox.Add (this.hbox2);
-		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vbox[this.hbox2]));
+		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.vbox [this.hbox2]));
 		w9.Position = 2;
 		w9.Expand = false;
 		w9.Fill = false;
@@ -233,13 +193,13 @@ public partial class MainWindow
 		this.label5.Name = "label5";
 		this.label5.LabelProp = "DVD-RW drive:";
 		this.hbox7.Add (this.label5);
-		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.hbox7[this.label5]));
+		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.hbox7 [this.label5]));
 		w10.Position = 0;
 		w10.Expand = false;
 		w10.Fill = false;
 		w10.Padding = ((uint)(15));
 		this.vbox.Add (this.hbox7);
-		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox[this.hbox7]));
+		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox [this.hbox7]));
 		w11.Position = 3;
 		w11.Expand = false;
 		w11.Fill = false;
@@ -255,7 +215,7 @@ public partial class MainWindow
 		this.entry_dvd.IsEditable = true;
 		this.entry_dvd.InvisibleChar = '●';
 		this.hbox3.Add (this.entry_dvd);
-		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.entry_dvd]));
+		global::Gtk.Box.BoxChild w12 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.entry_dvd]));
 		w12.Position = 0;
 		w12.Expand = false;
 		w12.Fill = false;
@@ -265,7 +225,7 @@ public partial class MainWindow
 		this.fixed3.Name = "fixed3";
 		this.fixed3.HasWindow = false;
 		this.hbox3.Add (this.fixed3);
-		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.fixed3]));
+		global::Gtk.Box.BoxChild w13 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.fixed3]));
 		w13.Position = 1;
 		// Container child hbox3.Gtk.Box+BoxChild
 		this.hbuttonbox3 = new global::Gtk.HButtonBox ();
@@ -277,14 +237,14 @@ public partial class MainWindow
 		this.button9.UseUnderline = true;
 		this.button9.Label = "Autodetect";
 		this.hbuttonbox3.Add (this.button9);
-		global::Gtk.ButtonBox.ButtonBoxChild w14 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox3[this.button9]));
+		global::Gtk.ButtonBox.ButtonBoxChild w14 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox3 [this.button9]));
 		w14.Expand = false;
 		w14.Fill = false;
 		this.hbox3.Add (this.hbuttonbox3);
-		global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.hbox3[this.hbuttonbox3]));
+		global::Gtk.Box.BoxChild w15 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.hbuttonbox3]));
 		w15.Position = 2;
 		this.vbox.Add (this.hbox3);
-		global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vbox[this.hbox3]));
+		global::Gtk.Box.BoxChild w16 = ((global::Gtk.Box.BoxChild)(this.vbox [this.hbox3]));
 		w16.Position = 4;
 		w16.Expand = false;
 		w16.Fill = false;
@@ -300,11 +260,11 @@ public partial class MainWindow
 		this.checkbutton_dryrun.DrawIndicator = true;
 		this.checkbutton_dryrun.UseUnderline = true;
 		this.fixed4.Add (this.checkbutton_dryrun);
-		global::Gtk.Fixed.FixedChild w17 = ((global::Gtk.Fixed.FixedChild)(this.fixed4[this.checkbutton_dryrun]));
+		global::Gtk.Fixed.FixedChild w17 = ((global::Gtk.Fixed.FixedChild)(this.fixed4 [this.checkbutton_dryrun]));
 		w17.X = 15;
 		w17.Y = 3;
 		this.vbox.Add (this.fixed4);
-		global::Gtk.Box.BoxChild w18 = ((global::Gtk.Box.BoxChild)(this.vbox[this.fixed4]));
+		global::Gtk.Box.BoxChild w18 = ((global::Gtk.Box.BoxChild)(this.vbox [this.fixed4]));
 		w18.Position = 5;
 		// Container child vbox.Gtk.Box+BoxChild
 		this.hbox5 = new global::Gtk.HBox ();
@@ -315,7 +275,7 @@ public partial class MainWindow
 		this.label3.Name = "label3";
 		this.label3.LabelProp = "Burning speed:";
 		this.hbox5.Add (this.label3);
-		global::Gtk.Box.BoxChild w19 = ((global::Gtk.Box.BoxChild)(this.hbox5[this.label3]));
+		global::Gtk.Box.BoxChild w19 = ((global::Gtk.Box.BoxChild)(this.hbox5 [this.label3]));
 		w19.Position = 0;
 		w19.Expand = false;
 		w19.Fill = false;
@@ -328,14 +288,14 @@ public partial class MainWindow
 		this.combobox_speed.Name = "combobox_speed";
 		this.combobox_speed.Active = 0;
 		this.hbox5.Add (this.combobox_speed);
-		global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.hbox5[this.combobox_speed]));
+		global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.hbox5 [this.combobox_speed]));
 		w20.PackType = ((global::Gtk.PackType)(1));
 		w20.Position = 1;
 		w20.Expand = false;
 		w20.Fill = false;
 		w20.Padding = ((uint)(49));
 		this.vbox.Add (this.hbox5);
-		global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.vbox[this.hbox5]));
+		global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.vbox [this.hbox5]));
 		w21.Position = 6;
 		w21.Expand = false;
 		w21.Fill = false;
@@ -351,7 +311,7 @@ public partial class MainWindow
 		this.button_ok.UseUnderline = true;
 		this.button_ok.Label = "Burn";
 		this.hbuttonbox.Add (this.button_ok);
-		global::Gtk.ButtonBox.ButtonBoxChild w22 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox[this.button_ok]));
+		global::Gtk.ButtonBox.ButtonBoxChild w22 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox [this.button_ok]));
 		w22.Expand = false;
 		w22.Fill = false;
 		w22.Padding = ((uint)(15));
@@ -362,12 +322,12 @@ public partial class MainWindow
 		this.button_exit.UseUnderline = true;
 		this.button_exit.Label = "Exit";
 		this.hbuttonbox.Add (this.button_exit);
-		global::Gtk.ButtonBox.ButtonBoxChild w23 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox[this.button_exit]));
+		global::Gtk.ButtonBox.ButtonBoxChild w23 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox [this.button_exit]));
 		w23.Position = 1;
 		w23.Expand = false;
 		w23.Fill = false;
 		this.vbox.Add (this.hbuttonbox);
-		global::Gtk.Box.BoxChild w24 = ((global::Gtk.Box.BoxChild)(this.vbox[this.hbuttonbox]));
+		global::Gtk.Box.BoxChild w24 = ((global::Gtk.Box.BoxChild)(this.vbox [this.hbuttonbox]));
 		w24.Position = 8;
 		w24.Expand = false;
 		this.Add (this.vbox);

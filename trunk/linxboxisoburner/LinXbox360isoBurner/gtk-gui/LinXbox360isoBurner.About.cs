@@ -5,23 +5,15 @@ namespace LinXbox360isoBurner
 	public partial class About
 	{
 		private global::Gtk.VBox vbox4;
-
 		private global::Gtk.HBox hbox2;
-
 		private global::Gtk.Image image;
-
 		private global::Gtk.VBox vbox6;
-
 		private global::Gtk.Label label2;
-
 		private global::Gtk.Label label3;
-
 		private global::Gtk.Label label4;
-
 		private global::Gtk.HButtonBox hbuttonbox3;
-
 		private global::Gtk.Button button;
-
+        
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -46,7 +38,7 @@ namespace LinXbox360isoBurner
 			this.image.Name = "image";
 			this.image.Pixbuf = global::Gdk.Pixbuf.LoadFromResource ("LinXbox360isoBurner.icon.png");
 			this.hbox2.Add (this.image);
-			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.hbox2[this.image]));
+			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.image]));
 			w1.Position = 0;
 			w1.Expand = false;
 			w1.Fill = false;
@@ -60,7 +52,7 @@ namespace LinXbox360isoBurner
 			this.label2.LabelProp = "LinXbox360isoBurner ver. 0.4.x";
 			this.label2.Justify = ((global::Gtk.Justification)(2));
 			this.vbox6.Add (this.label2);
-			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.label2]));
+			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox6 [this.label2]));
 			w2.Position = 0;
 			// Container child vbox6.Gtk.Box+BoxChild
 			this.label3 = new global::Gtk.Label ();
@@ -68,7 +60,7 @@ namespace LinXbox360isoBurner
 			this.label3.LabelProp = "Author: Andrey Sizov <AndrSizov@gmail.com>";
 			this.label3.Justify = ((global::Gtk.Justification)(2));
 			this.vbox6.Add (this.label3);
-			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.label3]));
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox6 [this.label3]));
 			w3.Position = 1;
 			// Container child vbox6.Gtk.Box+BoxChild
 			this.label4 = new global::Gtk.Label ();
@@ -76,17 +68,17 @@ namespace LinXbox360isoBurner
 			this.label4.LabelProp = "This programm is distriuted under GNU GPL v.3\nYou can get sourse code via svn repository\nhttp://linxboxisoburner.googlecode.com/svn/trunk/linxboxisoburner";
 			this.label4.Justify = ((global::Gtk.Justification)(2));
 			this.vbox6.Add (this.label4);
-			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox6[this.label4]));
+			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox6 [this.label4]));
 			w4.Position = 2;
 			w4.Expand = false;
 			w4.Fill = false;
 			this.hbox2.Add (this.vbox6);
-			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox2[this.vbox6]));
+			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.vbox6]));
 			w5.PackType = ((global::Gtk.PackType)(1));
 			w5.Position = 1;
 			w5.Fill = false;
 			this.vbox4.Add (this.hbox2);
-			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.hbox2]));
+			global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.hbox2]));
 			w6.Position = 0;
 			w6.Expand = false;
 			w6.Fill = false;
@@ -100,11 +92,11 @@ namespace LinXbox360isoBurner
 			this.button.UseUnderline = true;
 			this.button.Label = "Close";
 			this.hbuttonbox3.Add (this.button);
-			global::Gtk.ButtonBox.ButtonBoxChild w7 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox3[this.button]));
+			global::Gtk.ButtonBox.ButtonBoxChild w7 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox3 [this.button]));
 			w7.Expand = false;
 			w7.Fill = false;
 			this.vbox4.Add (this.hbuttonbox3);
-			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox4[this.hbuttonbox3]));
+			global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.hbuttonbox3]));
 			w8.Position = 1;
 			this.Add (this.vbox4);
 			if ((this.Child != null)) {
