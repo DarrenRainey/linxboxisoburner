@@ -42,7 +42,6 @@ namespace LinXbox360isoBurner
 			progress = progress.Trim('%');
             double tmp = Convert.ToDouble(progress);
 			tmp = tmp/100;
-//			if (tmp > 1) tmp = 1;
             progressbar.Fraction = tmp;
 
             string speed = substrings[num-7];
@@ -57,7 +56,6 @@ namespace LinXbox360isoBurner
             rbu = rbu.Trim('%');
             tmp = Convert.ToDouble(rbu);
 			tmp = tmp/100;
-//			if (tmp > 1) tmp = 1;
            	progressbar_rbu.Fraction = tmp;
 
             string ubu = substrings[num -1];
@@ -65,7 +63,6 @@ namespace LinXbox360isoBurner
             ubu = ubu.Trim('%');
             tmp = Convert.ToDouble(ubu);
 			tmp = tmp/100;
-//			if (tmp > 1) tmp = 1;
            	progressbar_ubu.Fraction = tmp;
         }	
 		

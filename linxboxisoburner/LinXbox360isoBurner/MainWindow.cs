@@ -95,8 +95,9 @@ public partial class MainWindow: Gtk.Window
 			return;
 		}
 		
-		isoname = isoname.Replace(" ","\\ ");
-		
+//		isoname = isoname.Replace(" ","\\ ");
+		isoname="\""+isoname+"\"";
+			
 		string dvdrw = entry_dvd.Text;
 		
 		string speed = combobox_speed.ActiveText;

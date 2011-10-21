@@ -5,15 +5,11 @@ namespace LinXbox360isoBurner
 	public partial class FileError
 	{
 		private global::Gtk.VBox vbox3;
-
 		private global::Gtk.Label label1;
-
 		private global::Gtk.HButtonBox hbuttonbox2;
-
 		private global::Gtk.Button button;
-
 		private global::Gtk.Fixed fixed2;
-
+        
 		protected virtual void Build ()
 		{
 			global::Stetic.Gui.Initialize (this);
@@ -37,7 +33,7 @@ namespace LinXbox360isoBurner
 			this.label1.Name = "label1";
 			this.label1.LabelProp = ".dvd file error";
 			this.vbox3.Add (this.label1);
-			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox3[this.label1]));
+			global::Gtk.Box.BoxChild w1 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.label1]));
 			w1.Position = 0;
 			// Container child vbox3.Gtk.Box+BoxChild
 			this.hbuttonbox2 = new global::Gtk.HButtonBox ();
@@ -49,11 +45,11 @@ namespace LinXbox360isoBurner
 			this.button.UseUnderline = true;
 			this.button.Label = "Close";
 			this.hbuttonbox2.Add (this.button);
-			global::Gtk.ButtonBox.ButtonBoxChild w2 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2[this.button]));
+			global::Gtk.ButtonBox.ButtonBoxChild w2 = ((global::Gtk.ButtonBox.ButtonBoxChild)(this.hbuttonbox2 [this.button]));
 			w2.Expand = false;
 			w2.Fill = false;
 			this.vbox3.Add (this.hbuttonbox2);
-			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox3[this.hbuttonbox2]));
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.hbuttonbox2]));
 			w3.Position = 1;
 			w3.Expand = false;
 			w3.Fill = false;
@@ -62,7 +58,7 @@ namespace LinXbox360isoBurner
 			this.fixed2.Name = "fixed2";
 			this.fixed2.HasWindow = false;
 			this.vbox3.Add (this.fixed2);
-			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox3[this.fixed2]));
+			global::Gtk.Box.BoxChild w4 = ((global::Gtk.Box.BoxChild)(this.vbox3 [this.fixed2]));
 			w4.Position = 2;
 			w4.Fill = false;
 			this.Add (this.vbox3);
