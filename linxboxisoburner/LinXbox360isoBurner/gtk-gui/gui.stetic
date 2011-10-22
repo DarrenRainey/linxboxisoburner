@@ -6,7 +6,7 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="../bin/Debug/LinXbox360isoBurner.exe" internal="true" />
+    <widget-library name="../bin/Release/LinXbox360isoBurner.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="396 328">
     <action-group name="Default">
@@ -919,7 +919,7 @@
                 <child>
                   <widget class="Gtk.Label" id="label2">
                     <property name="MemberName" />
-                    <property name="LabelProp">LinXbox360isoBurner ver. 0.4.x</property>
+                    <property name="LabelProp">LinXbox360isoBurner ver. 0.5.x</property>
                     <property name="Justify">Center</property>
                   </widget>
                   <packing>

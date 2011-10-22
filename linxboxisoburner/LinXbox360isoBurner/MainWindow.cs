@@ -87,16 +87,27 @@ public partial class MainWindow: Gtk.Window
 		string isoname = dvdreader.ReadLine();
 		isoname = dvdfile.DirectoryName + "/" + isoname;
 		
-		
-		if (!File.Exists(isoname))
+		FileInfo iso = new FileInfo(isoname);
+		if (!iso.Exists)
 		{
 			FileError fileerrorwindow = new FileError();
 			fileerrorwindow.Show();
 			return;
 		}
 		
-//		isoname = isoname.Replace(" ","\\ ");
 		isoname="\""+isoname+"\"";
+		
+		//Added for XGD3 format support
+		if (iso.Length >= 8547991552)
+		{
+			if (!Truncate(isoname))
+			{
+				FileError fileerrorwindow = new FileError();
+				fileerrorwindow.Show();
+				return;
+			}
+		layerbreak = "2086912";
+		}
 			
 		string dvdrw = entry_dvd.Text;
 		
@@ -245,4 +256,15 @@ public partial class MainWindow: Gtk.Window
 		prefs.Visible = true;
 	}
 	
+	static bool Truncate (string iso)
+	{
+		bool result = true;
+		Process truncate = new Process();
+		truncate.StartInfo.FileName="truncate";
+		string arg = "--size=8547991552 "+iso;
+		truncate.StartInfo.Arguments=arg;
+		truncate.Exited += delegate { if (truncate.ExitCode !=0) result=false;};
+		truncate.Start();
+		return result;
+	}
 }

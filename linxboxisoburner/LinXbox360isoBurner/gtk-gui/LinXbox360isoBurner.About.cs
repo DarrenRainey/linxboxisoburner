@@ -49,7 +49,7 @@ namespace LinXbox360isoBurner
 			// Container child vbox6.Gtk.Box+BoxChild
 			this.label2 = new global::Gtk.Label ();
 			this.label2.Name = "label2";
-			this.label2.LabelProp = "LinXbox360isoBurner ver. 0.4.x";
+			this.label2.LabelProp = "LinXbox360isoBurner ver. 0.5.x";
 			this.label2.Justify = ((global::Gtk.Justification)(2));
 			this.vbox6.Add (this.label2);
 			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox6 [this.label2]));
