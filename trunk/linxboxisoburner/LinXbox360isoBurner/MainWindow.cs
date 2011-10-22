@@ -265,6 +265,7 @@ public partial class MainWindow: Gtk.Window
 		truncate.StartInfo.Arguments=arg;
 		truncate.Exited += delegate { if (truncate.ExitCode !=0) result=false;};
 		truncate.Start();
+		truncate.WaitForExit();
 		return result;
 	}
 }
