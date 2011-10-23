@@ -3,13 +3,13 @@
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ActiveDocument="LinXbox360isoBurner/BurningWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LinXbox360isoBurner/MainWindow.cs">
     <Files>
       <File FileName="LinXbox360isoBurner/BurningWindow.cs" Line="66" Column="1" />
-      <File FileName="LinXbox360isoBurner/MainWindow.cs" Line="122" Column="1" />
-      <File FileName="LinXbox360isoBurner/Dvdrwchoose.cs" Line="23" Column="16" />
-      <File FileName="LinXbox360isoBurner/FileError.cs" Line="19" Column="1" />
-      <File FileName="LinXbox360isoBurner/About.cs" Line="18" Column="4" />
+      <File FileName="LinXbox360isoBurner/MainWindow.cs" Line="168" Column="3" />
+      <File FileName="LinXbox360isoBurner/Dvdrwchoose.cs" Line="1" Column="1" />
+      <File FileName="LinXbox360isoBurner/FileError.cs" Line="1" Column="1" />
+      <File FileName="LinXbox360isoBurner/About.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,7 +19,7 @@
               <Option id="ShowVersionControlOverlays" value="True" />
               <Option id="ShowAllFiles" value="True" />
             </Node>
-            <Node name="BurningWindow.cs" selected="True" />
+            <Node name="MainWindow.cs" selected="True" />
           </Node>
         </State>
       </Pad>
@@ -31,6 +31,7 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/home/requiem/Projects/linxboxisoburner/linxboxisoburner/LinXbox360isoBurner/MainWindow.cs" line="98" />
+      <Breakpoint file="/home/requiem/Projects/linxboxisoburner/linxboxisoburner/LinXbox360isoBurner/MainWindow.cs" line="261" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
