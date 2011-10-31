@@ -1,7 +1,7 @@
-
 using System;
 using System.Collections.Generic;
 using Gnome.Vfs;
+using LinXbox360isoBurner;
 
 namespace LinXbox360isoBurner
 {
@@ -27,10 +27,11 @@ namespace LinXbox360isoBurner
 			if (d.DeviceType == DeviceType.Cdrom) 
 				{
 					dvdrwlist.Add(d.DevicePath);
-					combobox.AppendText(d.DisplayName + " (" + d.DevicePath +")");
+					DVDdrive dvd = new DVDdrive(d.DevicePath);
+					dvd.GetMediaInfo();
+					combobox.AppendText(dvd.Name + " (" + d.DevicePath +")");
 				}
 		}
-		
 		combobox.Active = 0;
 		}
 		

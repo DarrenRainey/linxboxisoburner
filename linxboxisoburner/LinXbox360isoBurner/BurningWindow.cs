@@ -17,11 +17,12 @@ namespace LinXbox360isoBurner
 		{
 			set 
 			{
+				burnproc.CancelOutputRead();
 				statusbar.Pop(1);
 				statusbar.Push(1,value);
 				trayicon.Tooltip = value;
-				
 				if (value.Contains("RBU")) Status_string_paser(value);
+				burnproc.BeginOutputReadLine();
 			}
 		}
 		
