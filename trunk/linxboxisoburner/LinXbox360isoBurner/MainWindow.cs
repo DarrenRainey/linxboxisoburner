@@ -226,7 +226,27 @@ public partial class MainWindow: Gtk.Window
 
 	protected virtual void OnEntryChanged (object sender, System.EventArgs e)
 	{
-		if (!(entry.Text =="") && !(entry_dvd.Text == "")) BurnSensetive = true;
+		if (File.Exists(entry.Text) && File.Exists(entry_dvd.Text))
+		{
+			DVDdrive dvd = new DVDdrive (entry_dvd.Text);
+			dvd.GetMediaInfo();
+			combobox_speed.Data.Clear();
+			if (dvd.DiskInserted)
+			{	
+				foreach (string speed in dvd.WriteSpeeds)
+				{
+					combobox_speed.AppendText(speed);
+				}
+				combobox_speed.Sensitive = true;
+				BurnSensetive = true;
+			}
+			else 
+			{
+				BurnSensetive = false;
+				combobox_speed.Sensitive =false;
+				combobox_speed.AppendText("No media");
+			}
+		}
 			else BurnSensetive = false;
 	}
 

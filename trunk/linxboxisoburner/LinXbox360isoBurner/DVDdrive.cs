@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace LinXbox360isoBurner
 {
@@ -9,11 +10,28 @@ namespace LinXbox360isoBurner
 		string path;
 		string producer;
 		string model;
-		string [] writespeed;
-				
-		public DVDdrive ()
+		bool diskinserted;
+		List <string> writespeed;
+		
+		public string Name 
 		{
-			
+			get 
+			{
+				string name = producer + " " + model;
+				return name;
+			}
+		}
+		
+		public List <string> WriteSpeeds
+		{
+			get
+			{return writespeed;}
+		}
+		
+		public bool DiskInserted
+		{
+			get 
+			{return diskinserted;}
 		}
 		
 		public DVDdrive (string p)
@@ -23,6 +41,7 @@ namespace LinXbox360isoBurner
 		
 		public bool GetMediaInfo ()
 		{
+		diskinserted = false;
 		if (!File.Exists(path)) return false;
 			
 		Process getinfo = new Process();
@@ -30,30 +49,39 @@ namespace LinXbox360isoBurner
 		getinfo.StartInfo.RedirectStandardOutput = true;
 		getinfo.StartInfo.RedirectStandardError = true;
 		getinfo.EnableRaisingEvents = true;
-		
-		getinfo.OutputDataReceived += HandleGetinfoOutputDataReceived; 	
-		getinfo.ErrorDataReceived += HandleGetinfoErrorDataReceived;
-		getinfo.Exited += HandleGetinfoExited;
 
 		getinfo.StartInfo.Arguments = path;
 		getinfo.StartInfo.FileName = "dvd+rw-mediainfo";
+		getinfo.Start();
 		getinfo.WaitForExit();
+		
+		StreamReader output = getinfo.StandardOutput;
+		bool end = false;
+		do
+		{
+			string line = output.ReadLine();
+			char [] separators;
+			if (line==null) { end = true; break;}
+			if (line.Contains("INQUIRY"))
+				{
+					separators = new char [] {'['};
+					string [] parts = line.Split(separators,StringSplitOptions.RemoveEmptyEntries);
+					separators = new char [] {' ','[',']'};
+					producer = parts[1].ToString().Trim(separators);
+					model = parts[2].ToString().Trim(separators);
+				}
+			if (line.Contains("Write Speed #"))
+				{
+					separators = new char [] {' '};
+					string [] parts = line.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+					separators = new char [] {' ', 'x'};
+					writespeed.Add(parts[3].ToString().Trim(separators));
+					diskinserted  = true;
+				}
+		}		
+		while (!end);
+		output.Dispose();
 		return true;
-		}
-
-		void HandleGetinfoExited (object sender, EventArgs e)
-		{
-			
-		}
-
-		void HandleGetinfoErrorDataReceived (object sender, DataReceivedEventArgs e)
-		{
-			
-		}
-
-		void HandleGetinfoOutputDataReceived (object sender, DataReceivedEventArgs e)
-		{
-			
 		}
 	}
 }

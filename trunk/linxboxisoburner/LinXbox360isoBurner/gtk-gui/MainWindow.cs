@@ -282,9 +282,8 @@ public partial class MainWindow
 		w19.Padding = ((uint)(15));
 		// Container child hbox5.Gtk.Box+BoxChild
 		this.combobox_speed = global::Gtk.ComboBox.NewText ();
-		this.combobox_speed.AppendText ("2");
-		this.combobox_speed.AppendText ("4");
-		this.combobox_speed.AppendText ("6");
+		this.combobox_speed.AppendText ("No media");
+		this.combobox_speed.Sensitive = false;
 		this.combobox_speed.Name = "combobox_speed";
 		this.combobox_speed.Active = 0;
 		this.hbox5.Add (this.combobox_speed);
