@@ -283,6 +283,8 @@ public partial class MainWindow
 		// Container child hbox5.Gtk.Box+BoxChild
 		this.combobox_speed = global::Gtk.ComboBox.NewText ();
 		this.combobox_speed.AppendText ("No media");
+		this.combobox_speed.AppendText ("1");
+		this.combobox_speed.AppendText ("2");
 		this.combobox_speed.Sensitive = false;
 		this.combobox_speed.Name = "combobox_speed";
 		this.combobox_speed.Active = 0;

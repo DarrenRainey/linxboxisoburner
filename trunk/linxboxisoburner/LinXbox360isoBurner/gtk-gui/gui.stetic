@@ -373,7 +373,9 @@
                 <property name="MemberName" />
                 <property name="Sensitive">False</property>
                 <property name="IsTextCombo">True</property>
-                <property name="Items">No media</property>
+                <property name="Items">No media
+1
+2</property>
                 <property name="Active">0</property>
               </widget>
               <packing>

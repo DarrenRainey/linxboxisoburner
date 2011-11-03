@@ -39,6 +39,7 @@ public partial class MainWindow: Gtk.Window
 	public MainWindow (): base (Gtk.WindowType.Toplevel)
 	{
 		Build ();
+		entry_dvd.Changed += OnEntry_dvdChanged;
 		
 		// Adds "*.dvd" fillter to FileChooserDialog
 		FileFilter filter = new FileFilter();
@@ -216,7 +217,6 @@ public partial class MainWindow: Gtk.Window
 	protected virtual void OnFilechooserbuttonSelectionChanged (object sender, System.EventArgs e)
 	{
 		entry.Text = filechooserbutton.Filename;
-		if (!(entry.Text =="") && !(entry_dvd.Text == "")) BurnSensetive = true;
 	}
 	
 	protected virtual void OnCheckbuttonDryrunPressed (object sender, System.EventArgs e)
@@ -226,30 +226,34 @@ public partial class MainWindow: Gtk.Window
 
 	protected virtual void OnEntryChanged (object sender, System.EventArgs e)
 	{
-		if (File.Exists(entry.Text) && File.Exists(entry_dvd.Text))
+		if (File.Exists(entry.Text) && File.Exists(entry_dvd.Text)) BurnSensetive = true;
+			else BurnSensetive = false;
+	}
+	
+	protected virtual void OnEntry_dvdChanged (object sender, System.EventArgs e)
+	{
+		if (File.Exists(entry_dvd.Text))
 		{
-			DVDdrive dvd = new DVDdrive (entry_dvd.Text);
-			dvd.GetMediaInfo();
-			combobox_speed.Data.Clear();
+			DVDdrive dvd = new DVDdrive(entry_dvd.Text);
+			if (!dvd.GetMediaInfo()) return;
+			
 			if (dvd.DiskInserted)
-			{	
-				foreach (string speed in dvd.WriteSpeeds)
+			{
+				foreach (string d in dvd.WriteSpeeds)
 				{
-					combobox_speed.AppendText(speed);
+					combobox_speed.AppendText(d);
 				}
+				combobox_speed.Active = 0;
 				combobox_speed.Sensitive = true;
-				BurnSensetive = true;
 			}
 			else 
 			{
-				BurnSensetive = false;
-				combobox_speed.Sensitive =false;
 				combobox_speed.AppendText("No media");
+				combobox_speed.Sensitive = false;
 			}
 		}
-			else BurnSensetive = false;
 	}
-
+	
 	protected virtual void OnButtonAutodvdrwClicked (object sender, System.EventArgs e)
 	{	
 		Dvdrwchoose dialog = new Dvdrwchoose();
