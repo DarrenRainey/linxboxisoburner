@@ -37,25 +37,29 @@ namespace LinXbox360isoBurner
 		public DVDdrive (string p)
 		{
 			path = p;
+			writespeed = new List<string>();
 		}
 		
 		public bool GetMediaInfo ()
 		{
 		diskinserted = false;
+		bool result = false;
+			
 		if (!File.Exists(path)) return false;
 			
 		Process getinfo = new Process();
 		getinfo.StartInfo.UseShellExecute = false;
 		getinfo.StartInfo.RedirectStandardOutput = true;
 		getinfo.StartInfo.RedirectStandardError = true;
-		getinfo.EnableRaisingEvents = true;
-
+		getinfo.EnableRaisingEvents = true;	
+			
 		getinfo.StartInfo.Arguments = path;
 		getinfo.StartInfo.FileName = "dvd+rw-mediainfo";
 		getinfo.Start();
 		getinfo.WaitForExit();
-		
+				
 		StreamReader output = getinfo.StandardOutput;
+			
 		bool end = false;
 		do
 		{
@@ -69,19 +73,20 @@ namespace LinXbox360isoBurner
 					separators = new char [] {' ','[',']'};
 					producer = parts[1].ToString().Trim(separators);
 					model = parts[2].ToString().Trim(separators);
+					result = true;
 				}
 			if (line.Contains("Write Speed #"))
 				{
 					separators = new char [] {' '};
 					string [] parts = line.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 					separators = new char [] {' ', 'x'};
-					writespeed.Add(parts[3].ToString().Trim(separators));
+					writespeed.Add(parts[3].ToString().Substring(0,3));
 					diskinserted  = true;
 				}
 		}		
 		while (!end);
 		output.Dispose();
-		return true;
+		return result;
 		}
 	}
 }
