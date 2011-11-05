@@ -14,6 +14,8 @@ public partial class MainWindow: Gtk.Window
 	BurningWindow burning;
 	Conf config;
 	StreamWriter logwriter;
+	Gnome.Vfs.VolumeMonitor vm;
+	DVDdrive dvddrive;
 	
 	bool BurnSensetive 
 	{
@@ -65,6 +67,17 @@ public partial class MainWindow: Gtk.Window
 		
 		if (config.dvdrwremember) entry_dvd.Text = config.dvdrw;
 		
+		dvddrive = new DVDdrive (entry_dvd.Text);
+		dvddrive.GetMediaInfo();
+		
+		Gnome.Vfs.Vfs.Initialize();
+		vm = Gnome.Vfs.VolumeMonitor.Get();
+		vm.VolumeMounted += delegate(object o, Gnome.Vfs.VolumeMountedArgs args) {
+			DriveStateChanged();
+		};
+		vm.VolumeUnmounted += delegate(object o, Gnome.Vfs.VolumeUnmountedArgs args) {
+			DriveStateChanged();
+		};
 	}
 	
 	// Starts burning process
@@ -226,32 +239,12 @@ public partial class MainWindow: Gtk.Window
 
 	protected virtual void OnEntryChanged (object sender, System.EventArgs e)
 	{
-		if (File.Exists(entry.Text) && File.Exists(entry_dvd.Text)) BurnSensetive = true;
-			else BurnSensetive = false;
+		TryState();
 	}
 	
-	protected virtual void OnEntry_dvdChanged (object sender, System.EventArgs e)
+	protected void OnEntry_dvdChanged (object sender, System.EventArgs e)
 	{
-		if (File.Exists(entry_dvd.Text))
-		{
-			DVDdrive dvd = new DVDdrive(entry_dvd.Text);
-			if (!dvd.GetMediaInfo()) return;
-			
-			if (dvd.DiskInserted)
-			{
-				foreach (string d in dvd.WriteSpeeds)
-				{
-					combobox_speed.AppendText(d);
-				}
-				combobox_speed.Active = 0;
-				combobox_speed.Sensitive = true;
-			}
-			else 
-			{
-				combobox_speed.AppendText("No media");
-				combobox_speed.Sensitive = false;
-			}
-		}
+		DriveStateChanged();
 	}
 	
 	protected virtual void OnButtonAutodvdrwClicked (object sender, System.EventArgs e)
@@ -269,7 +262,7 @@ public partial class MainWindow: Gtk.Window
 	}
 	
 	protected virtual void OnPreferencesActionActivated (object sender, System.EventArgs e)
-	{
+	{;
 		Preferences prefs = new Preferences(config);
 		this.Sensitive = false;
 		prefs.Destroyed+= delegate(object send, EventArgs c) 
@@ -291,5 +284,35 @@ public partial class MainWindow: Gtk.Window
 		truncate.Start();
 		truncate.WaitForExit();
 		return result;
+	}
+	void DriveStateChanged()
+	{
+		ListStore ls = new ListStore(typeof(string));
+		combobox_speed.Model = ls;
+		dvddrive = new DVDdrive(entry_dvd.Text);
+		dvddrive.GetMediaInfo();
+				
+		if (dvddrive.DiskInserted)
+		{
+			foreach (string d in dvddrive.WriteSpeeds)
+			{
+				combobox_speed.AppendText(d);
+			}
+			combobox_speed.Active = 0;
+			combobox_speed.Sensitive = true;
+		}
+		else 
+		{
+			combobox_speed.AppendText("No media");
+			combobox_speed.Active = 0;
+			combobox_speed.Sensitive = false;
+		}
+		ls.Dispose();
+		TryState();
+	}
+	void TryState()
+	{
+		if (File.Exists(entry.Text) && dvddrive.DiskInserted) BurnSensetive = true;
+		else BurnSensetive = false;
 	}
 }

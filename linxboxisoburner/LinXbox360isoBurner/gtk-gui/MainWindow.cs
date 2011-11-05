@@ -283,8 +283,6 @@ public partial class MainWindow
 		// Container child hbox5.Gtk.Box+BoxChild
 		this.combobox_speed = global::Gtk.ComboBox.NewText ();
 		this.combobox_speed.AppendText ("No media");
-		this.combobox_speed.AppendText ("1");
-		this.combobox_speed.AppendText ("2");
 		this.combobox_speed.Sensitive = false;
 		this.combobox_speed.Name = "combobox_speed";
 		this.combobox_speed.Active = 0;
@@ -350,7 +348,6 @@ public partial class MainWindow
 		this.AboutAction1.Activated += new global::System.EventHandler (this.OnAboutActionActivated);
 		this.entry.Changed += new global::System.EventHandler (this.OnEntryChanged);
 		this.filechooserbutton.SelectionChanged += new global::System.EventHandler (this.OnFilechooserbuttonSelectionChanged);
-		this.entry_dvd.Changed += new global::System.EventHandler (this.OnEntryChanged);
 		this.button9.Clicked += new global::System.EventHandler (this.OnButtonAutodvdrwClicked);
 		this.checkbutton_dryrun.Clicked += new global::System.EventHandler (this.OnCheckbuttonDryrunPressed);
 		this.button_ok.Clicked += new global::System.EventHandler (this.OnButtonOkClicked);

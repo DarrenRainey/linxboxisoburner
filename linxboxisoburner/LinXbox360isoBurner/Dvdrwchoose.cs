@@ -18,7 +18,7 @@ namespace LinXbox360isoBurner
 			
 		dvdrwlist = new List<string>();
 		
-		Vfs.Initialize();	
+//		Vfs.Initialize();	
 		VolumeMonitor vm = VolumeMonitor.Get();
 		Drive [] drives = vm.ConnectedDrives;
 		
