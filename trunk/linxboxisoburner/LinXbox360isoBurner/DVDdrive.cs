@@ -38,6 +38,7 @@ namespace LinXbox360isoBurner
 		{
 			path = p;
 			writespeed = new List<string>();
+			diskinserted = false;
 		}
 		
 		public bool GetMediaInfo ()

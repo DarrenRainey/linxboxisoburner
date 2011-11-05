@@ -6,7 +6,7 @@
   </configuration>
   <import>
     <widget-library name="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
-    <widget-library name="../bin/Debug/LinXbox360isoBurner.exe" internal="true" />
+    <widget-library name="../bin/Release/LinXbox360isoBurner.exe" internal="true" />
   </import>
   <widget class="Gtk.Window" id="MainWindow" design-size="396 328">
     <action-group name="Default">
@@ -274,7 +274,6 @@
                 <property name="Text" translatable="yes">/dev/</property>
                 <property name="IsEditable">True</property>
                 <property name="InvisibleChar">●</property>
-                <signal name="Changed" handler="OnEntryChanged" />
               </widget>
               <packing>
                 <property name="Position">0</property>
@@ -373,9 +372,7 @@
                 <property name="MemberName" />
                 <property name="Sensitive">False</property>
                 <property name="IsTextCombo">True</property>
-                <property name="Items">No media
-1
-2</property>
+                <property name="Items">No media</property>
                 <property name="Active">0</property>
               </widget>
               <packing>
